@@ -1,0 +1,11 @@
+:root{--search-body:16px;--search-label:16px;--search-support:16px;--search-heading:32px;--search-section:25px;--search-card:20px}
+.search-page{font-size:var(--search-body)}
+.search-page .page-heading h1{font-size:var(--search-heading);line-height:1.2}
+.search-page .page-heading p:last-child,.search-page .section-heading p:last-child{font-size:var(--search-support);line-height:1.6}
+.search-page .search-card .card-title h2,.search-page .popular-section h2{font-size:var(--search-section);line-height:1.3}
+.search-page .card-title p,.search-page .field>span,.search-page legend,.search-page .filter-group label{font-size:var(--search-label)}
+.search-page input,.search-page select,.search-page input::placeholder{font-size:16px}
+.search-page .primary-button,.search-page .reset-button{font-size:16px;min-height:48px;padding-left:20px;padding-right:20px}
+.search-page .popular-card b{font-size:18px}.search-page .popular-card small{font-size:14px;line-height:1.5}.search-page .popular-card{min-height:88px}.search-page .popular-card>svg:first-child{width:22px;height:22px}.search-page .popular-card .card-arrow{width:18px;height:18px}
+.search-page .filter-group input{width:17px;height:17px}.search-page .search-title-icon svg{width:22px;height:22px}.search-page .field-icon{width:20px;height:20px}
+@media(max-width:600px){.search-page .page-heading h1{font-size:30px}.search-page .page-heading p:last-child,.search-page .section-heading p:last-child{font-size:15px}.search-page .popular-card b{font-size:17px}}

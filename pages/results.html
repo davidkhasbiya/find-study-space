@@ -1,5 +1,213 @@
 <!DOCTYPE html>
 <html lang="id">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hasil Pencarian | Find Study Space</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/results.css"><style>.results-page svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.sidebar svg{width:18px;height:18px}.result-location,.result-meta span{display:flex;align-items:center;gap:6px}.result-location svg,.result-meta svg{flex:0 0 16px;width:16px;height:16px}.facility-tags span{display:inline-flex;align-items:center;gap:5px}.facility-tags svg{width:14px;height:14px}.detail-link{display:inline-flex;align-items:center;gap:6px}.detail-link svg{width:15px;height:15px}.empty-state>svg{width:28px;height:28px;color:var(--teal);margin-bottom:12px}.change-search{display:inline-flex;align-items:center;gap:6px}.change-search svg{width:16px;height:16px}.results-toolbar select{appearance:none;padding-right:30px}.select-wrap{position:relative;display:inline-block}.select-wrap svg{position:absolute;right:9px;top:9px;width:14px;height:14px;pointer-events:none;color:var(--muted)}.mobile-menu{font-size:0;position:relative;width:22px;height:20px}.mobile-menu::before{content:"";position:absolute;inset:3px 0;border-top:2px solid currentColor;border-bottom:2px solid currentColor;box-shadow:0 6px 0 -1px currentColor}</style></head>
-<body class="results-page"><button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button><aside class="sidebar"><a class="sidebar-brand" href="../index.html"><span class="brand-mark" aria-hidden="true">FS</span><span>Find Study <b>Space</b></span></a><nav class="sidebar-nav" aria-label="Navigasi dashboard"><p class="nav-label">MENU UTAMA</p><a class="nav-item" href="dashboard.html"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg>Dashboard</a><a class="nav-item active" href="search.html"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>Cari Study Space</a><p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item" href="#pengaturan"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 15a2 2 0 0 0 1-2 2 2 0 0 0-1-2l-1-1a2 2 0 0 0-2-1l-1-1a2 2 0 0 0-2-1l-1 1a2 2 0 0 0-2 1l-1 1a2 2 0 0 0-1 2l1 1a2 2 0 0 0 1 2l1 1a2 2 0 0 0 2 1l1 1 1-1a2 2 0 0 0 2-1l1-1Z"/></svg>Pengaturan</a></nav><a class="logout-link" href="login.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M21 4v16"/></svg>Logout</a></aside>
-<main class="main-content"><header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu" aria-expanded="false"></button><div class="user-profile"><div class="avatar">M</div><div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div></div></header><div class="content-wrap"><div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span aria-hidden="true">/</span><a href="search.html">Cari Study Space</a><span aria-hidden="true">/</span><strong>Hasil Pencarian</strong></div><section class="page-heading"><p class="eyebrow">HASIL PENCARIAN</p><h1>Hasil Pencarian</h1><p>Temukan ruang yang paling sesuai dengan kebutuhan belajarmu.</p></section><section class="summary-bar"><div><strong id="resultCount">0 study space ditemukan</strong><div class="filter-chips" id="filterChips"></div></div><a class="change-search" href="search.html"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Ubah Pencarian</a></section><section class="results-toolbar"><div><span class="toolbar-label">Filter cepat</span><span class="select-wrap"><select id="typeFilter" aria-label="Filter jenis ruang"><option value="">Semua jenis ruang</option><option value="Ruang Diskusi">Ruang Diskusi</option><option value="Perpustakaan">Perpustakaan</option><option value="Ruang Belajar">Ruang Belajar</option></select><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span><span class="select-wrap"><select id="facilityFilter" aria-label="Filter fasilitas"><option value="">Semua fasilitas</option><option value="WiFi">Wi-Fi</option><option value="AC">AC</option><option value="Stop Kontak">Stop Kontak</option><option value="Proyektor">Proyektor</option></select><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></div><label class="sort-control">Urutkan <span class="select-wrap"><select id="sortSelect" aria-label="Urutkan hasil"><option value="relevant">Paling relevan</option><option value="name">Nama A-Z</option><option value="capacity">Kapasitas terbesar</option><option value="capacity-low">Kapasitas terkecil</option></select><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></label></section><section class="results-grid" id="resultsGrid"></section><section class="empty-state" id="emptyState" hidden><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><h2>Study space tidak ditemukan</h2><p>Coba ubah kata kunci atau kurangi filter pencarian untuk menemukan ruang lainnya.</p><a href="search.html">Ubah Pencarian</a></section></div></main><script src="../js/data.js"></script><script src="../js/results.js"></script><script src="../js/sidebar.js"></script></body></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pencarian | Find Study Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/results.css">
+    <style>
+        .results-page svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .sidebar svg {
+            width: 18px;
+            height: 18px
+        }
+
+        .result-location,
+        .result-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .result-location svg,
+        .result-meta svg {
+            flex: 0 0 16px;
+            width: 16px;
+            height: 16px
+        }
+
+        .facility-tags span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px
+        }
+
+        .facility-tags svg {
+            width: 14px;
+            height: 14px
+        }
+
+        .detail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .detail-link svg {
+            width: 15px;
+            height: 15px
+        }
+
+        .empty-state>svg {
+            width: 28px;
+            height: 28px;
+            color: var(--teal);
+            margin-bottom: 12px
+        }
+
+        .change-search {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .change-search svg {
+            width: 16px;
+            height: 16px
+        }
+
+        .results-toolbar select {
+            appearance: none;
+            padding-right: 30px
+        }
+
+        .select-wrap {
+            position: relative;
+            display: inline-block
+        }
+
+        .select-wrap svg {
+            position: absolute;
+            right: 9px;
+            top: 9px;
+            width: 14px;
+            height: 14px;
+            pointer-events: none;
+            color: var(--muted)
+        }
+
+        .mobile-menu {
+            font-size: 0;
+            position: relative;
+            width: 22px;
+            height: 20px
+        }
+
+        .mobile-menu::before {
+            content: "";
+            position: absolute;
+            inset: 3px 0;
+            border-top: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            box-shadow: 0 6px 0 -1px currentColor
+        }
+    </style>
+</head>
+
+<body class="results-page"><button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button>
+    <aside class="sidebar"><a class="sidebar-brand" href="../index.html"><span class="brand-mark"
+                aria-hidden="true">FS</span><span>Find Study <b>Space</b></span></a>
+        <nav class="sidebar-nav" aria-label="Navigasi dashboard">
+            <p class="nav-label">MENU UTAMA</p><a class="nav-item" href="dashboard.html"><svg aria-hidden="true"
+                    viewBox="0 0 24 24">
+                    <rect x="4" y="4" width="6" height="6" />
+                    <rect x="14" y="4" width="6" height="6" />
+                    <rect x="4" y="14" width="6" height="6" />
+                    <rect x="14" y="14" width="6" height="6" />
+                </svg>Dashboard</a><a class="nav-item active" href="search.html"><svg aria-hidden="true"
+                    viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="6" />
+                    <path d="m16 16 4 4" />
+                </svg>Cari Study Space</a>
+            <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item" href="#pengaturan"><svg aria-hidden="true"
+                    viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19 15a2 2 0 0 0 1-2 2 2 0 0 0-1-2l-1-1a2 2 0 0 0-2-1l-1-1a2 2 0 0 0-2-1l-1 1a2 2 0 0 0-2 1l-1 1a2 2 0 0 0-1 2l1 1a2 2 0 0 0 1 2l1 1a2 2 0 0 0 2 1l1 1 1-1a2 2 0 0 0 2-1l1-1Z" />
+                </svg>Pengaturan</a>
+        </nav><a class="logout-link" href="login.html"><svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M10 17l5-5-5-5M15 12H3M21 4v16" />
+            </svg>Logout</a>
+    </aside>
+    <main class="main-content">
+        <header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu"
+                aria-expanded="false"></button>
+            <div class="user-profile">
+                <div class="avatar">M</div>
+                <div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div>
+            </div>
+        </header>
+        <div class="content-wrap">
+            <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span aria-hidden="true">/</span><a
+                    href="search.html">Cari Study Space</a><span aria-hidden="true">/</span><strong>Hasil
+                    Pencarian</strong></div>
+            <section class="page-heading">
+                <p class="eyebrow">HASIL PENCARIAN</p>
+                <h1>Hasil Pencarian</h1>
+                <p>Temukan ruang yang paling sesuai dengan kebutuhan belajarmu.</p>
+            </section>
+            <section class="summary-bar">
+                <div><strong id="resultCount">0 study space ditemukan</strong>
+                    <div class="filter-chips" id="filterChips"></div>
+                </div><a class="change-search" href="search.html"><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M19 12H5M11 18l-6-6 6-6" />
+                    </svg>Ubah Pencarian</a>
+            </section>
+            <section class="results-toolbar">
+                <div><span class="toolbar-label">Filter cepat</span><span class="select-wrap"><select id="typeFilter"
+                            aria-label="Filter jenis ruang">
+                            <option value="">Semua jenis ruang</option>
+                            <option value="Ruang Diskusi">Ruang Diskusi</option>
+                            <option value="Perpustakaan">Perpustakaan</option>
+                            <option value="Ruang Belajar">Ruang Belajar</option>
+                        </select><svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></span><span class="select-wrap"><select id="facilityFilter"
+                            aria-label="Filter fasilitas">
+                            <option value="">Semua fasilitas</option>
+                            <option value="WiFi">Wi-Fi</option>
+                            <option value="AC">AC</option>
+                            <option value="Stop Kontak">Stop Kontak</option>
+                            <option value="Proyektor">Proyektor</option>
+                        </select><svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></span></div><label class="sort-control">Urutkan <span class="select-wrap"><select
+                            id="sortSelect" aria-label="Urutkan hasil">
+                            <option value="relevant">Paling relevan</option>
+                            <option value="name">Nama A-Z</option>
+                            <option value="capacity">Kapasitas terbesar</option>
+                            <option value="capacity-low">Kapasitas terkecil</option>
+                        </select><svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></span></label>
+            </section>
+            <section class="results-grid" id="resultsGrid"></section>
+            <section class="empty-state" id="emptyState" hidden><svg aria-hidden="true" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="6" />
+                    <path d="m16 16 4 4" />
+                </svg>
+                <h2>Study space tidak ditemukan</h2>
+                <p>Coba ubah kata kunci atau kurangi filter pencarian untuk menemukan ruang lainnya.</p><a
+                    href="search.html">Ubah Pencarian</a>
+            </section>
+        </div>
+    </main>
+    <script src="../js/data.js"></script>
+    <script src="../js/results.js"></script>
+    <script src="../js/sidebar.js"></script>
+</body>
+
+</html>
