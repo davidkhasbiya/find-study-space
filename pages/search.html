@@ -9,32 +9,110 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/search.css">
+  <style>
+    .search-page svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .sidebar svg {
+      width: 18px;
+      height: 18px
+    }
+
+    .search-title-icon {
+      background: transparent;
+      color: var(--navy)
+    }
+
+    .popular-card {
+      color: var(--navy);
+      transition: border-color .2s, box-shadow .2s
+    }
+
+    .popular-card:hover {
+      transform: none;
+      box-shadow: 0 3px 10px #1e3a5f0d
+    }
+
+    .popular-card>svg:first-child {
+      flex: 0 0 20px;
+      color: var(--muted)
+    }
+
+    .popular-card .card-arrow {
+      width: 16px;
+      height: 16px;
+      margin-left: auto;
+      color: var(--teal)
+    }
+
+    .reset-button,
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .mobile-menu {
+      font-size: 0;
+      position: relative;
+      width: 22px;
+      height: 20px
+    }
+
+    .mobile-menu::before {
+      content: "";
+      position: absolute;
+      inset: 3px 0;
+      border-top: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      box-shadow: 0 6px 0 -1px currentColor
+    }
+  </style>
 </head>
 
 <body class="search-page">
   <button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button>
-  <aside class="sidebar" id="sidebar"><a class="sidebar-brand" href="../index.html"><span
-        class="brand-mark">⌂</span><span>Find Study <b>Space</b></span></a>
+  <aside class="sidebar" id="sidebar"><a class="sidebar-brand" href="../index.html"><span class="brand-mark"
+        aria-hidden="true">FS</span><span>Find Study <b>Space</b></span></a>
     <nav class="sidebar-nav" aria-label="Navigasi dashboard">
-      <p class="nav-label">MENU UTAMA</p>
-      <a class="nav-item" href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-item active"
-        href="search.html"><span>⌕</span>Cari Study Space</a><a class="nav-item"
-        href="search.html?filter=favorite"><span>♡</span>Study Space Favorit</a><a class="nav-item"
-        href="location.html"><span>⌖</span>Informasi Lokasi</a>
-      <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item" href="#pengaturan"><span>⚙</span>Pengaturan</a>
-    </nav><a class="logout-link" href="login.html"><span>↪</span>Logout</a>
+      <p class="nav-label">MENU UTAMA</p><a class="nav-item" href="dashboard.html"><svg aria-hidden="true"
+          viewBox="0 0 24 24">
+          <rect x="4" y="4" width="6" height="6" />
+          <rect x="14" y="4" width="6" height="6" />
+          <rect x="4" y="14" width="6" height="6" />
+          <rect x="14" y="14" width="6" height="6" />
+        </svg>Dashboard</a><a class="nav-item active" href="search.html"><svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="6" />
+          <path d="m16 16 4 4" />
+        </svg>Cari Study Space</a>
+      <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item" href="#pengaturan"><svg aria-hidden="true"
+          viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.4 1.4-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.2h-2v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1L9 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H7.7v-2h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9L9 9l1.4-1.4.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5v-.2h2v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1L20 9l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.2v2h-.2a1.7 1.7 0 0 0-1.7 1z" />
+        </svg>Pengaturan</a>
+    </nav><a class="logout-link" href="login.html"><svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="M10 17l5-5-5-5M15 12H3M21 4v16" />
+      </svg>Logout</a>
   </aside>
   <main class="main-content">
     <header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu" aria-controls="sidebar"
-        aria-expanded="false">☰</button>
+        aria-expanded="false"></button>
       <div class="user-profile">
         <div class="avatar">M</div>
         <div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div>
       </div>
     </header>
     <div class="content-wrap">
-      <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>›</span><strong>Cari Study Space</strong>
-      </div>
+      <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span aria-hidden="true">/</span><strong>Cari Study
+          Space</strong></div>
       <section class="page-heading">
         <p class="eyebrow">TEMUKAN RUANGMU</p>
         <h1>Cari Study Space</h1>
@@ -42,7 +120,10 @@
       </section>
       <section class="search-card">
         <div class="card-title">
-          <div class="search-title-icon">⌕</div>
+          <div class="search-title-icon"><svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="6" />
+              <path d="m16 16 4 4" />
+            </svg></div>
           <div>
             <h2>Filter Pencarian</h2>
             <p>Gunakan filter berikut untuk hasil yang lebih sesuai.</p>
@@ -68,32 +149,52 @@
             </fieldset>
           </div>
           <p class="form-error" id="capacityError" role="alert"></p>
-          <div class="form-actions"><button class="reset-button" id="resetButton" type="button">Reset
-              Filter</button><button class="primary-button" type="submit">Cari Study Space <span>→</span></button></div>
+          <div class="form-actions"><button class="reset-button" id="resetButton" type="button"><svg aria-hidden="true"
+                viewBox="0 0 24 24">
+                <path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5M4 4v4.5h4.5" />
+              </svg>Reset Filter</button><button class="primary-button" type="submit">Cari Study Space <svg
+                aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg></button></div>
         </form>
       </section>
       <section class="popular-section">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">PENCARIAN CEPAT</p>
-            <h2>Pilihan Populer</h2>
-            <p>Mulai pencarian dari kebutuhan yang paling sering dicari.</p>
-          </div>
+          <p class="eyebrow">PENCARIAN CEPAT</p>
+          <h2>Pilihan Populer</h2>
+          <p>Mulai pencarian dari kebutuhan yang paling sering dicari.</p>
         </div>
-        <div class="popular-grid"><button class="popular-card" type="button" data-location="Perpustakaan"><span
-              class="popular-icon blue">▤</span><span><b>Perpustakaan</b><small>Ruang tenang untuk
-                fokus</small></span><em>→</em></button><button class="popular-card" type="button"
-            data-type="Ruang Diskusi"><span class="popular-icon purple">◌</span><span><b>Ruang
-                Diskusi</b><small>Kolaborasi bersama kelompok</small></span><em>→</em></button><button
-            class="popular-card" type="button" data-facility="WiFi"><span
-              class="popular-icon teal">⌁</span><span><b>Study Space dengan Wi-Fi</b><small>Tetap terhubung saat
-                belajar</small></span><em>→</em></button><button class="popular-card" type="button"
-            data-facility="Stop Kontak"><span class="popular-icon orange">▣</span><span><b>Study Space dengan Stop
-                Kontak</b><small>Nyaman untuk perangkatmu</small></span><em>→</em></button></div>
+        <div class="popular-grid"><button class="popular-card" type="button" data-location="Perpustakaan"><svg
+              aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 20V5a2 2 0 0 1 2-2h10v17M5 20h14M9 7h4M9 11h4" />
+            </svg><span><b>Perpustakaan</b><small>Ruang tenang untuk fokus</small></span><svg class="card-arrow"
+              aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></button><button class="popular-card" type="button" data-type="Ruang Diskusi"><svg aria-hidden="true"
+              viewBox="0 0 24 24">
+              <path d="M4 5h16v11H8l-4 3V5Z" />
+              <path d="M8 9h8M8 12h5" />
+            </svg><span><b>Ruang Diskusi</b><small>Kolaborasi bersama kelompok</small></span><svg class="card-arrow"
+              aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></button><button class="popular-card" type="button" data-facility="WiFi"><svg aria-hidden="true"
+              viewBox="0 0 24 24">
+              <path d="M4 9a12 12 0 0 1 16 0M7 12a7.5 7.5 0 0 1 10 0M10 15a3.5 3.5 0 0 1 4 0M12 19h.01" />
+            </svg><span><b>Study Space dengan Wi-Fi</b><small>Tetap terhubung saat belajar</small></span><svg
+              class="card-arrow" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></button><button class="popular-card" type="button" data-facility="Stop Kontak"><svg
+              aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M8 3v7M16 3v7M6 8h12v2a6 6 0 0 1-12 0V8ZM12 16v5" />
+            </svg><span><b>Study Space dengan Stop Kontak</b><small>Nyaman untuk perangkatmu</small></span><svg
+              class="card-arrow" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></button></div>
       </section>
     </div>
   </main>
   <script src="../js/search.js"></script>
+  <script src="../js/sidebar.js"></script>
 </body>
 
 </html>

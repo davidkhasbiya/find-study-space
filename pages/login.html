@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/readability.css">
 </head>
 
 <body class="login-page">
@@ -23,7 +24,7 @@
         <h1>Belajar lebih nyaman,<br><span>mulai dari sini.</span></h1>
         <p>Temukan ruang belajar ideal yang sesuai dengan kebutuhanmu di seluruh area kampus.</p>
       </div>
-      <div class="campus-illustration">
+      <div class="campus-illustration" aria-hidden="true" style="display:none">
         <div class="sun"></div>
         <div class="tree tree-one"></div>
         <div class="tree tree-two"></div>
@@ -55,15 +56,15 @@
           </div>
           <div class="form-options"><label class="remember"><input type="checkbox" id="remember"> <span>Ingat
                 saya</span></label><a href="#" id="forgotPassword">Lupa Password?</a></div>
-          <p class="login-status" id="loginStatus" role="alert"></p><button class="login-button" type="submit">Login
-            <span>→</span></button>
+          <p class="login-status" id="loginStatus" role="alert"></p><button class="login-button"
+            type="submit">Login</button>
         </form>
-        <p class="register-prompt">Belum memiliki akun? <a href="#">Daftar</a></p>
+        <p class="register-prompt">Belum memiliki akun? <a href="register.html">Daftar</a></p>
       </div>
-      <p class="copyright">© 2024 Find Study Space Kampus</p>
+      <p class="copyright">© 2026 Find Study Space Kampus</p>
     </section>
   </main>
-  <script src="../js/script.js"></script>
+  <script src="../js/login.js"></script>
 </body>
 
 </html>

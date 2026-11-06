@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daftar akun Find Study Space Kampus">
+  <title>Daftar | Find Study Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/register.css">
+  <link rel="stylesheet" href="../css/readability.css">
+</head>
+
+<body class="register-page">
+  <main class="register-layout">
+    <section class="register-intro"><a class="register-brand" href="../index.html"><span>FS</span>Find Study Space</a>
+      <div>
+        <p class="eyebrow">STUDY SPACE KAMPUS</p>
+        <h1>Temukan tempat belajar yang cocok untukmu.</h1>
+        <p>Daftar untuk mulai menemukan ruang belajar di kampus.</p>
+      </div>
+    </section>
+    <section class="register-panel">
+      <div class="register-box"><a class="back-link" href="login.html">← Kembali ke login</a>
+        <div class="form-heading">
+          <p class="eyebrow">BUAT AKUN</p>
+          <h2>Buat Akun</h2>
+          <p>Daftar untuk mulai menemukan ruang belajar di kampus.</p>
+        </div>
+        <form id="registerForm" novalidate>
+          <div class="form-group"><label for="fullName">Nama lengkap</label><input id="fullName" name="fullName"
+              type="text" autocomplete="name" placeholder="Nama lengkap"><span class="input-error"
+              id="fullNameError"></span></div>
+          <div class="form-group"><label for="registerEmail">Email</label><input id="registerEmail" name="email"
+              type="email" autocomplete="email" placeholder="nama@kampus.ac.id"><span class="input-error"
+              id="registerEmailError"></span></div>
+          <div class="form-group"><label for="registerPassword">Password</label>
+            <div class="password-wrap"><input id="registerPassword" name="password" type="password"
+                autocomplete="new-password" placeholder="Minimal 8 karakter"><button type="button"
+                class="password-toggle" data-target="registerPassword" aria-label="Tampilkan password">Lihat</button>
+            </div><span class="input-error" id="registerPasswordError"></span>
+          </div>
+          <div class="form-group"><label for="confirmPassword">Konfirmasi password</label>
+            <div class="password-wrap"><input id="confirmPassword" name="confirmPassword" type="password"
+                autocomplete="new-password" placeholder="Ulangi password"><button type="button" class="password-toggle"
+                data-target="confirmPassword" aria-label="Tampilkan password">Lihat</button></div><span
+              class="input-error" id="confirmPasswordError"></span>
+          </div>
+          <label class="terms"><input id="agree" type="checkbox"><span>Saya setuju menggunakan layanan ini untuk
+              kebutuhan belajar.</span></label><span class="input-error" id="agreeError"></span>
+          <p class="register-status" id="registerStatus" role="alert"></p><button class="register-button"
+            type="submit">Daftar</button>
+        </form>
+        <p class="login-prompt">Sudah punya akun? <a href="login.html">Masuk</a></p>
+      </div>
+      <p class="copyright">© 2026 Find Study Space Kampus</p>
+    </section>
+  </main>
+  <script src="../js/register.js"></script>
+</body>
+
+</html>
