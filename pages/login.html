@@ -1,10 +1,69 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masuk | Find Study Space</title>
+  <meta name="description" content="Login Find Study Space Kampus">
+  <title>Login | Find Study Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
+
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-visual" aria-label="Tentang Find Study Space">
+      <a class="login-brand" href="../index.html"><span class="brand-icon">⌂</span><span>Find Study
+          <b>Space</b></span></a>
+      <div class="visual-copy">
+        <p class="eyebrow">STUDY SPACE KAMPUS</p>
+        <h1>Belajar lebih nyaman,<br><span>mulai dari sini.</span></h1>
+        <p>Temukan ruang belajar ideal yang sesuai dengan kebutuhanmu di seluruh area kampus.</p>
+      </div>
+      <div class="campus-illustration">
+        <div class="sun"></div>
+        <div class="tree tree-one"></div>
+        <div class="tree tree-two"></div>
+        <div class="building"><i></i><i></i><i></i><i></i><b>FIND<br>SPACE</b></div>
+        <div class="student student-one">●</div>
+        <div class="student student-two">●</div>
+      </div>
+      <div class="visual-footer"><span>Ruang belajar nyaman untuk produktivitasmu</span><span>01 / 03</span></div>
+    </section>
+    <section class="login-panel">
+      <div class="login-box">
+        <a class="mobile-back" href="../index.html">← Kembali ke beranda</a>
+        <div class="form-heading">
+          <p class="eyebrow">SELAMAT DATANG</p>
+          <h2>Selamat Datang Kembali</h2>
+          <p>Masuk untuk menemukan ruang belajar favoritmu.</p>
+        </div>
+        <form id="loginForm" novalidate>
+          <div class="form-group"><label for="email">Email</label>
+            <div class="input-wrap"><span>✉</span><input id="email" name="email" type="email"
+                placeholder="nama@kampus.ac.id" autocomplete="email"><span class="input-error" id="emailError"></span>
+            </div>
+          </div>
+          <div class="form-group"><label for="password">Password</label>
+            <div class="input-wrap"><span>♙</span><input id="password" name="password" type="password"
+                placeholder="Masukkan password" autocomplete="current-password"><button class="password-toggle"
+                id="passwordToggle" type="button" aria-label="Tampilkan password">Lihat</button></div><span
+              class="input-error" id="passwordError"></span>
+          </div>
+          <div class="form-options"><label class="remember"><input type="checkbox" id="remember"> <span>Ingat
+                saya</span></label><a href="#" id="forgotPassword">Lupa Password?</a></div>
+          <p class="login-status" id="loginStatus" role="alert"></p><button class="login-button" type="submit">Login
+            <span>→</span></button>
+        </form>
+        <p class="register-prompt">Belum memiliki akun? <a href="#">Daftar</a></p>
+      </div>
+      <p class="copyright">© 2024 Find Study Space Kampus</p>
+    </section>
+  </main>
+  <script src="../js/script.js"></script>
 </body>
+
 </html>

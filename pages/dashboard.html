@@ -1,10 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard Find Study Space Kampus">
   <title>Dashboard | Find Study Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
 </head>
-<body>
+
+<body class="dashboard-page">
+  <button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand"><span class="brand-mark">⌂</span><span>Find Study <b>Space</b></span></div>
+    <nav class="sidebar-nav" aria-label="Navigasi dashboard">
+      <p class="nav-label">MENU UTAMA</p>
+      <a class="nav-item active" href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-item"
+        href="search.html"><span>⌕</span>Cari Study Space</a><a class="nav-item"
+        href="search.html?filter=favorite"><span>♡</span>Study Space Favorit</a><a class="nav-item"
+        href="location.html"><span>⌖</span>Informasi Lokasi</a>
+      <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item" href="#pengaturan"><span>⚙</span>Pengaturan</a>
+    </nav><a class="logout-link" href="login.html"><span>↪</span>Logout</a>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu" aria-controls="sidebar"
+        aria-expanded="false">☰</button>
+      <div class="breadcrumb"><span>Dashboard</span><small>Ringkasan aktivitas study space kamu</small></div>
+      <div class="user-profile">
+        <div class="avatar">M</div>
+        <div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div><span class="profile-chevron">⌄</span>
+      </div>
+    </header>
+    <div class="content-wrap">
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow">DASHBOARD</p>
+          <h1>Selamat datang kembali!</h1>
+          <p class="welcome-copy">Temukan ruang belajar yang nyaman untuk mendukung aktivitas kuliahmu hari ini.</p>
+        </div>
+        <div class="date-chip">⌑ <span>Informasi kampus<br><b>Selalu terbaru</b></span></div>
+      </section>
+      <section class="stats-grid" aria-label="Statistik study space">
+        <article class="stat-card">
+          <div class="stat-icon blue">▦</div>
+          <div><span>Total Study Space</span><strong>24</strong><small><i>↗</i> 3 ruang baru bulan ini</small></div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon teal">♡</div>
+          <div><span>Study Space Favorit</span><strong>6</strong><small><i>•</i> Ruang tersimpan</small></div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon orange">⌖</div>
+          <div><span>Gedung Kampus</span><strong>8</strong><small><i>•</i> Area tersedia</small></div>
+        </article>
+      </section>
+      <section class="search-panel" aria-labelledby="search-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">TEMUKAN RUANGMU</p>
+            <h2 id="search-title">Cari Study Space</h2>
+          </div><span class="search-hint">Cari berdasarkan kebutuhanmu</span>
+        </div>
+        <form class="dashboard-search" id="dashboardSearchForm"><label
+            class="search-field search-keyword"><span>⌕</span><input id="dashboardKeyword" type="search"
+              placeholder="Nama atau lokasi study space..." aria-label="Nama atau lokasi study space"></label><label
+            class="search-field"><span>♙</span><select id="dashboardCapacity" aria-label="Filter kapasitas">
+              <option value="">Kapasitas</option>
+              <option value="small">1 - 10 orang</option>
+              <option value="medium">11 - 30 orang</option>
+              <option value="large">31+ orang</option>
+            </select></label><label class="search-field"><span>▦</span><select id="dashboardFacility"
+              aria-label="Filter fasilitas">
+              <option value="">Fasilitas</option>
+              <option value="WiFi">WiFi</option>
+              <option value="AC">AC</option>
+              <option value="Proyektor">Proyektor</option>
+              <option value="Stop Kontak">Stop Kontak</option>
+            </select></label><button class="primary-button" type="submit">Cari <span>→</span></button></form>
+      </section>
+      <section class="section-block">
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">PILIHAN UNTUKMU</p>
+            <h2>Rekomendasi Study Space</h2>
+          </div><a href="search.html" class="view-all">Lihat semua <span>→</span></a>
+        </div>
+        <div class="dashboard-space-grid" id="dashboardRecommendations"></div>
+      </section>
+      <section class="section-block recent-section">
+        <div class="section-heading-row">
+          <div>
+            <p class="eyebrow">AKTIVITASMU</p>
+            <h2>Terakhir Dilihat</h2>
+          </div><a href="search.html" class="view-all">Riwayat lengkap <span>→</span></a>
+        </div>
+        <div class="recent-list" id="recentSpaces"></div>
+      </section>
+    </div>
+  </main>
+  <script src="../js/data.js"></script>
+  <script src="../js/script.js"></script>
 </body>
+
 </html>
