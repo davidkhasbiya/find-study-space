@@ -4,10 +4,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pencarian | Find Study Space</title>
+  <title>Cari Study Space | Find Study Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/search.css">
 </head>
 
-<body>
+<body class="search-page">
+  <button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button>
+  <aside class="sidebar" id="sidebar"><a class="sidebar-brand" href="../index.html"><span
+        class="brand-mark">⌂</span><span>Find Study <b>Space</b></span></a>
+    <nav class="sidebar-nav" aria-label="Navigasi dashboard">
+      <p class="nav-label">MENU UTAMA</p>
+      <a class="nav-item" href="dashboard.html"><span>▦</span>Dashboard</a><a class="nav-item active"
+        href="search.html"><span>⌕</span>Cari Study Space</a><a class="nav-item"
+        href="search.html?filter=favorite"><span>♡</span>Study Space Favorit</a><a class="nav-item"
+        href="location.html"><span>⌖</span>Informasi Lokasi</a>
+      <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item" href="#pengaturan"><span>⚙</span>Pengaturan</a>
+    </nav><a class="logout-link" href="login.html"><span>↪</span>Logout</a>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu" aria-controls="sidebar"
+        aria-expanded="false">☰</button>
+      <div class="user-profile">
+        <div class="avatar">M</div>
+        <div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div>
+      </div>
+    </header>
+    <div class="content-wrap">
+      <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>›</span><strong>Cari Study Space</strong>
+      </div>
+      <section class="page-heading">
+        <p class="eyebrow">TEMUKAN RUANGMU</p>
+        <h1>Cari Study Space</h1>
+        <p>Temukan ruang belajar yang sesuai dengan kebutuhanmu.</p>
+      </section>
+      <section class="search-card">
+        <div class="card-title">
+          <div class="search-title-icon">⌕</div>
+          <div>
+            <h2>Filter Pencarian</h2>
+            <p>Gunakan filter berikut untuk hasil yang lebih sesuai.</p>
+          </div>
+        </div>
+        <form id="searchPageForm" novalidate>
+          <div class="field-row"><label class="field field-wide"><span>Nama Study Space atau Lokasi</span><input
+                id="locationInput" type="search" placeholder="Contoh: Perpustakaan atau Gedung Teknik"></label><label
+              class="field"><span>Kapasitas minimum</span><input id="capacityInput" type="number" min="1" step="1"
+                placeholder="Contoh: 20"></label></div>
+          <div class="field-row second-row">
+            <fieldset class="filter-group">
+              <legend>Jenis ruang</legend><label><input type="radio" name="type" value="Ruang Diskusi">Ruang
+                Diskusi</label><label><input type="radio" name="type"
+                  value="Perpustakaan">Perpustakaan</label><label><input type="radio" name="type"
+                  value="Ruang Belajar">Ruang Belajar</label>
+            </fieldset>
+            <fieldset class="filter-group">
+              <legend>Fasilitas</legend><label><input type="checkbox" name="facility"
+                  value="WiFi">Wi-Fi</label><label><input type="checkbox" name="facility"
+                  value="AC">AC</label><label><input type="checkbox" name="facility" value="Stop Kontak">Stop
+                Kontak</label><label><input type="checkbox" name="facility" value="Proyektor">Proyektor</label>
+            </fieldset>
+          </div>
+          <p class="form-error" id="capacityError" role="alert"></p>
+          <div class="form-actions"><button class="reset-button" id="resetButton" type="button">Reset
+              Filter</button><button class="primary-button" type="submit">Cari Study Space <span>→</span></button></div>
+        </form>
+      </section>
+      <section class="popular-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PENCARIAN CEPAT</p>
+            <h2>Pilihan Populer</h2>
+            <p>Mulai pencarian dari kebutuhan yang paling sering dicari.</p>
+          </div>
+        </div>
+        <div class="popular-grid"><button class="popular-card" type="button" data-location="Perpustakaan"><span
+              class="popular-icon blue">▤</span><span><b>Perpustakaan</b><small>Ruang tenang untuk
+                fokus</small></span><em>→</em></button><button class="popular-card" type="button"
+            data-type="Ruang Diskusi"><span class="popular-icon purple">◌</span><span><b>Ruang
+                Diskusi</b><small>Kolaborasi bersama kelompok</small></span><em>→</em></button><button
+            class="popular-card" type="button" data-facility="WiFi"><span
+              class="popular-icon teal">⌁</span><span><b>Study Space dengan Wi-Fi</b><small>Tetap terhubung saat
+                belajar</small></span><em>→</em></button><button class="popular-card" type="button"
+            data-facility="Stop Kontak"><span class="popular-icon orange">▣</span><span><b>Study Space dengan Stop
+                Kontak</b><small>Nyaman untuk perangkatmu</small></span><em>→</em></button></div>
+      </section>
+    </div>
+  </main>
+  <script src="../js/search.js"></script>
 </body>
 
 </html>
