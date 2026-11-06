@@ -2,12 +2,85 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Ruang | Find Study Space</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Study Space | Find Study Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/detail.css">
 </head>
 
-<body>
+<body class="detail-page">
+    <button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button>
+    <aside class="sidebar"><a class="sidebar-brand" href="../index.html"><span class="brand-mark">⌂</span><span>Find
+                Study <b>Space</b></span></a>
+        <nav class="sidebar-nav" aria-label="Navigasi dashboard">
+            <p class="nav-label">MENU UTAMA</p><a class="nav-item" href="dashboard.html"><span>▦</span>Dashboard</a><a
+                class="nav-item active" href="search.html"><span>⌕</span>Cari Study Space</a><a class="nav-item"
+                href="search.html?filter=favorite"><span>♡</span>Study Space Favorit</a><a class="nav-item"
+                href="location.html"><span>⌖</span>Informasi Lokasi</a>
+            <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item"
+                href="#pengaturan"><span>⚙</span>Pengaturan</a>
+        </nav><a class="logout-link" href="login.html"><span>↪</span>Logout</a>
+    </aside>
+    <main class="main-content">
+        <header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu"
+                aria-expanded="false">☰</button>
+            <div class="user-profile">
+                <div class="avatar">M</div>
+                <div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div>
+            </div>
+        </header>
+        <div class="content-wrap" id="detailContent">
+            <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>›</span><a href="search.html">Cari Study
+                    Space</a><span>›</span><a href="results.html">Hasil Pencarian</a><span>›</span><strong>Detail Study
+                    Space</strong></div><a class="back-link" href="results.html">← Kembali ke hasil pencarian</a>
+            <section class="detail-header">
+                <div>
+                    <p class="eyebrow">DETAIL STUDY SPACE</p>
+                    <h1 id="spaceName"></h1>
+                    <p class="header-location" id="spaceLocation"></p>
+                </div><button class="favorite-button" id="favoriteButton" type="button"><span>♡</span> Simpan
+                    Favorit</button>
+            </section>
+            <section class="photo-layout"><img id="mainImage" class="main-photo" alt="">
+                <div class="thumbs"><img id="thumbOne" alt=""><img id="thumbTwo" alt=""></div>
+            </section>
+            <div class="detail-grid">
+                <section class="info-card">
+                    <p class="eyebrow">TENTANG RUANG</p>
+                    <h2 id="aboutTitle"></h2>
+                    <p id="description" class="long-description"></p>
+                    <div class="facts">
+                        <div><span>♙</span><small>Kapasitas</small><b id="capacity"></b></div>
+                        <div><span>▤</span><small>Jenis ruang</small><b id="roomType"></b></div>
+                        <div><span>⌖</span><small>Suasana</small><b>Tenang & nyaman</b></div>
+                    </div>
+                    <h3>Fasilitas</h3>
+                    <div class="facility-list" id="facilities"></div>
+                </section>
+                <aside class="location-card">
+                    <p class="eyebrow">INFORMASI LOKASI</p>
+                    <h2>Lokasi Study Space</h2>
+                    <div class="location-lines">
+                        <p><span>⌂</span><b id="building"></b></p>
+                        <p><span>⌖</span><span id="floor"></span></p>
+                        <p><span>◉</span><span>Area Kampus Utama</span></p>
+                    </div><a class="location-button" id="locationLink" href="#">Lihat Lokasi <span>→</span></a><a
+                        class="direction-link" id="directionLink" href="#">Petunjuk Menuju Lokasi →</a>
+                </aside>
+            </div>
+        </div>
+        <section class="not-found" id="notFound" hidden>
+            <div>⌕</div>
+            <h1>Study space tidak ditemukan</h1>
+            <p>ID study space yang dibuka tidak tersedia atau sudah berubah.</p><a href="results.html">Kembali ke hasil
+                pencarian</a>
+        </section>
+    </main>
+    <script src="../js/data.js"></script>
+    <script src="../js/detail.js"></script>
 </body>
 
 </html>
