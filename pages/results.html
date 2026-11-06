@@ -5,9 +5,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hasil Pencarian | Find Study Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/results.css">
 </head>
 
-<body>
+<body class="results-page">
+  <button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button>
+  <aside class="sidebar"><a class="sidebar-brand" href="../index.html"><span class="brand-mark">⌂</span><span>Find Study
+        <b>Space</b></span></a>
+    <nav class="sidebar-nav" aria-label="Navigasi dashboard">
+      <p class="nav-label">MENU UTAMA</p><a class="nav-item" href="dashboard.html"><span>▦</span>Dashboard</a><a
+        class="nav-item active" href="search.html"><span>⌕</span>Cari Study Space</a><a class="nav-item"
+        href="search.html?filter=favorite"><span>♡</span>Study Space Favorit</a><a class="nav-item"
+        href="location.html"><span>⌖</span>Informasi Lokasi</a>
+      <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item" href="#pengaturan"><span>⚙</span>Pengaturan</a>
+    </nav><a class="logout-link" href="login.html"><span>↪</span>Logout</a>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu"
+        aria-expanded="false">☰</button>
+      <div class="user-profile">
+        <div class="avatar">M</div>
+        <div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div>
+      </div>
+    </header>
+    <div class="content-wrap">
+      <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>›</span><a href="search.html">Cari Study
+          Space</a><span>›</span><strong>Hasil Pencarian</strong></div>
+      <section class="page-heading">
+        <p class="eyebrow">HASIL PENCARIAN</p>
+        <h1>Hasil Pencarian</h1>
+        <p>Temukan ruang yang paling sesuai dengan kebutuhan belajarmu.</p>
+      </section>
+      <section class="summary-bar">
+        <div><strong id="resultCount">0 study space ditemukan</strong>
+          <div class="filter-chips" id="filterChips"></div>
+        </div><a class="change-search" href="search.html">← Ubah Pencarian</a>
+      </section>
+      <section class="results-toolbar">
+        <div><span class="toolbar-label">Filter cepat</span><select id="typeFilter" aria-label="Filter jenis ruang">
+            <option value="">Semua jenis ruang</option>
+            <option value="Ruang Diskusi">Ruang Diskusi</option>
+            <option value="Perpustakaan">Perpustakaan</option>
+            <option value="Ruang Belajar">Ruang Belajar</option>
+          </select><select id="facilityFilter" aria-label="Filter fasilitas">
+            <option value="">Semua fasilitas</option>
+            <option value="WiFi">Wi-Fi</option>
+            <option value="AC">AC</option>
+            <option value="Stop Kontak">Stop Kontak</option>
+            <option value="Proyektor">Proyektor</option>
+          </select></div><label class="sort-control">Urutkan <select id="sortSelect" aria-label="Urutkan hasil">
+            <option value="relevant">Paling relevan</option>
+            <option value="name">Nama A-Z</option>
+            <option value="capacity">Kapasitas terbesar</option>
+            <option value="capacity-low">Kapasitas terkecil</option>
+          </select></label>
+      </section>
+      <section class="results-grid" id="resultsGrid"></section>
+      <section class="empty-state" id="emptyState" hidden>
+        <div>⌕</div>
+        <h2>Study space tidak ditemukan</h2>
+        <p>Coba ubah kata kunci atau kurangi filter pencarian untuk menemukan ruang lainnya.</p><a
+          href="search.html">Ubah Pencarian</a>
+      </section>
+    </div>
+  </main>
+  <script src="../js/data.js"></script>
+  <script src="../js/results.js"></script>
 </body>
 
 </html>
