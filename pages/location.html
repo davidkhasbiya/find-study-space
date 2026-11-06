@@ -2,12 +2,102 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lokasi | Find Study Space</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Lokasi | Find Study Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/location.css">
 </head>
 
-<body>
+<body class="location-page"><button class="sidebar-backdrop" type="button" aria-label="Tutup menu"></button>
+    <aside class="sidebar"><a class="sidebar-brand" href="../index.html"><span class="brand-mark">⌂</span><span>Find
+                Study <b>Space</b></span></a>
+        <nav class="sidebar-nav" aria-label="Navigasi dashboard">
+            <p class="nav-label">MENU UTAMA</p><a class="nav-item" href="dashboard.html"><span>▦</span>Dashboard</a><a
+                class="nav-item" href="search.html"><span>⌕</span>Cari Study Space</a><a class="nav-item"
+                href="search.html?filter=favorite"><span>♡</span>Study Space Favorit</a><a class="nav-item active"
+                href="location.html"><span>⌖</span>Informasi Lokasi</a>
+            <p class="nav-label nav-label-spaced">AKUN</p><a class="nav-item"
+                href="#pengaturan"><span>⚙</span>Pengaturan</a>
+        </nav><a class="logout-link" href="login.html"><span>↪</span>Logout</a>
+    </aside>
+    <main class="main-content">
+        <header class="topbar"><button class="mobile-menu" type="button" aria-label="Buka menu"
+                aria-expanded="false">☰</button>
+            <div class="user-profile">
+                <div class="avatar">M</div>
+                <div><strong>Mahasiswa</strong><small>Mahasiswa aktif</small></div>
+            </div>
+        </header>
+        <div class="content-wrap" id="locationContent">
+            <div class="breadcrumb"><a href="dashboard.html">Dashboard</a><span>›</span><a href="search.html">Cari Study
+                    Space</a><span>›</span><a id="detailCrumb" href="#">Detail Study
+                    Space</a><span>›</span><strong>Informasi Lokasi</strong></div>
+            <section class="page-heading">
+                <p class="eyebrow">LOKASI STUDY SPACE</p>
+                <h1>Informasi Lokasi</h1>
+                <p>Kenali area kampus dan temukan study space dengan lebih mudah.</p>
+            </section>
+            <section class="location-intro">
+                <div>
+                    <p class="eyebrow">RUANG YANG DIPILIH</p>
+                    <h2 id="spaceName"></h2>
+                    <p id="spaceLocation"></p>
+                </div><span class="accuracy-note">Denah ilustratif · Bukan peta akurat</span>
+            </section>
+            <div class="location-layout">
+                <section class="map-card">
+                    <div class="map-head">
+                        <div>
+                            <h2>Denah Area Kampus</h2>
+                            <p>Penanda menunjukkan area gedung study space.</p>
+                        </div><span class="map-legend"><i></i> Lokasi study space</span>
+                    </div>
+                    <div class="campus-map"><span class="road road-horizontal"></span><span
+                            class="road road-vertical"></span>
+                        <div class="map-area area-north">AREA UTARA</div>
+                        <div class="map-area area-south">AREA SELATAN</div>
+                        <div class="map-building library"><b>Perpustakaan</b><small>Gedung</small></div>
+                        <div class="map-building engineering"><b>Fakultas Teknik</b><small>Gedung</small></div>
+                        <div class="map-building student-center"><b>Student Center</b><small>Gedung</small></div>
+                        <div class="map-building canteen"><b>Kantin Kampus</b><small>Gedung</small></div>
+                        <div class="map-park">Taman Kampus</div>
+                        <div class="map-pin" id="mapPin"><span>⌖</span><b id="pinLabel"></b></div>
+                        <div class="map-compass">N<br><span>↑</span></div>
+                    </div>
+                    <p class="map-disclaimer">Denah ini merupakan ilustrasi untuk membantu orientasi umum di area
+                        kampus.</p>
+                </section>
+                <aside class="access-card">
+                    <p class="eyebrow">DETAIL AKSES</p>
+                    <h2>Cara Menemukan Ruang</h2>
+                    <div class="access-item"><span>⌂</span>
+                        <div><small>Gedung</small><b id="building"></b></div>
+                    </div>
+                    <div class="access-item"><span>⌖</span>
+                        <div><small>Lantai</small><b id="floor"></b></div>
+                    </div>
+                    <div class="access-item"><span>◉</span>
+                        <div><small>Area</small><b>Area Kampus Utama</b></div>
+                    </div>
+                    <div class="access-tip"><b>Petunjuk singkat</b>
+                        <p id="accessText"></p>
+                    </div><a class="direction-button" id="directionLink" href="#">Petunjuk Menuju Lokasi
+                        <span>→</span></a><a class="back-detail" id="backDetail" href="#">← Kembali ke Detail</a>
+                </aside>
+            </div>
+        </div>
+        <section class="not-found" id="notFound" hidden>
+            <div>⌕</div>
+            <h1>Lokasi study space tidak ditemukan</h1>
+            <p>Silakan kembali ke hasil pencarian dan pilih study space yang tersedia.</p><a href="results.html">Kembali
+                ke hasil pencarian</a>
+        </section>
+    </main>
+    <script src="../js/data.js"></script>
+    <script src="../js/location.js"></script>
 </body>
 
 </html>
