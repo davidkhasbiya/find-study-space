@@ -1,70 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Login Find Study Space Kampus">
-  <title>Login | Find Study Space</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/login.css">
-  <link rel="stylesheet" href="../css/readability.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login | Find Study Space</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 
-<body class="login-page">
-  <main class="login-layout">
-    <section class="login-visual" aria-label="Tentang Find Study Space">
-      <a class="login-brand" href="../index.html"><span>FS</span><span>Find Study
-          <b>Space</b></span></a>
-      <div class="visual-copy">
-        <p class="eyebrow">STUDY SPACE KAMPUS</p>
-        <h1>Belajar lebih nyaman,<br><span>mulai dari sini.</span></h1>
-        <p>Temukan ruang belajar ideal yang sesuai dengan kebutuhanmu di seluruh area kampus.</p>
-      </div>
-      <div class="campus-illustration" aria-hidden="true" style="display:none">
-        <div class="sun"></div>
-        <div class="tree tree-one"></div>
-        <div class="tree tree-two"></div>
-        <div class="building"><i></i><i></i><i></i><i></i><b>FIND<br>SPACE</b></div>
-        <div class="student student-one">●</div>
-        <div class="student student-two">●</div>
-      </div>
-      <div class="visual-footer"><span>Ruang belajar nyaman untuk produktivitasmu</span><span>01 / 03</span></div>
-    </section>
-    <section class="login-panel">
-      <div class="login-box">
-        <a class="mobile-back" href="../index.html">← Kembali ke beranda</a>
-        <div class="form-heading">
-          <p class="eyebrow">SELAMAT DATANG</p>
-          <h2>Selamat Datang Kembali</h2>
-          <p>Masuk untuk menemukan ruang belajar favoritmu.</p>
-        </div>
-        <form id="loginForm" novalidate>
-          <div class="form-group"><label for="email">Email</label>
-            <div class="input-wrap"><span>✉</span><input id="email" name="email" type="email"
-                placeholder="nama@kampus.ac.id" autocomplete="email"><span class="input-error" id="emailError"></span>
+<body class="auth-page login-page">
+    <main class="auth-layout">
+        <section class="auth-visual"><a class="auth-brand" href="../index.html"><span>FS</span>Find Study
+                <b>Space</b></a>
+            <div class="auth-visual__copy">
+                <p class="eyebrow">STUDY SPACE KAMPUS</p>
+                <h1>Ruang yang tepat.<br><span>Potensi tanpa batas.</span></h1>
+                <p>Temukan ruang belajar nyaman yang mendukung setiap langkah perjalanan akademikmu.</p>
             </div>
-          </div>
-          <div class="form-group"><label for="password">Password</label>
-            <div class="input-wrap"><span>♙</span><input id="password" name="password" type="password"
-                placeholder="Masukkan password" autocomplete="current-password"><button class="password-toggle"
-                id="passwordToggle" type="button" aria-label="Tampilkan password">Lihat</button></div><span
-              class="input-error" id="passwordError"></span>
-          </div>
-          <div class="form-options"><label class="remember"><input type="checkbox" id="remember"> <span>Ingat
-                saya</span></label><a href="#" id="forgotPassword">Lupa Password?</a></div>
-          <p class="login-status" id="loginStatus" role="alert"></p><button class="login-button"
-            type="submit">Login</button>
-        </form>
-        <p class="register-prompt">Belum memiliki akun? <a href="register.html">Daftar</a></p>
-      </div>
-      <p class="copyright">© 2026 Find Study Space Kampus</p>
-    </section>
-  </main>
-  <script src="../js/login.js"></script>
+            <div class="auth-visual__footer"><span>Temukan ruang. Mulai berkembang.</span><span>01 / 03</span></div>
+        </section>
+        <section class="auth-panel">
+            <div class="auth-card"><a class="auth-back" href="../index.html"><svg class="icon" viewBox="0 0 24 24">
+                        <path d="M19 12H5M11 18l-6-6 6-6" />
+                    </svg>Kembali ke beranda</a>
+                <div class="auth-heading">
+                    <p class="eyebrow">SELAMAT DATANG</p>
+                    <h2>Masuk ke akunmu</h2>
+                    <p>Gunakan akun mahasiswa untuk menemukan study space.</p>
+                </div>
+                <form id="loginForm" novalidate>
+                    <div class="auth-field"><label for="email">Email universitas</label><input class="form-input"
+                            id="email" type="email" placeholder="nama@kampus.ac.id" autocomplete="email"><span
+                            class="field-error" id="emailError"></span></div>
+                    <div class="auth-field"><label for="password">Kata sandi</label>
+                        <div class="password-field"><input class="form-input" id="password" type="password"
+                                placeholder="Masukkan kata sandi" autocomplete="current-password"><button
+                                class="password-toggle" id="passwordToggle" type="button"
+                                aria-label="Tampilkan kata sandi"><svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
+                                    <circle cx="12" cy="12" r="2.5" />
+                                </svg></button></div><span class="field-error" id="passwordError"></span>
+                    </div>
+                    <div class="auth-options"><label><input type="checkbox"> <span>Ingat saya</span></label><a href="#"
+                            id="forgotPassword">Lupa kata sandi?</a></div>
+                    <p class="auth-status" id="loginStatus" role="status"></p><button class="button auth-submit"
+                        type="submit"><a href="dashboard.html">Login</a></button>
+                </form>
+                <p class="auth-switch">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+            </div>
+            <p class="auth-copyright">© 2026 Find Study Space Kampus</p>
+        </section>
+    </main>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>
