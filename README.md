@@ -8,6 +8,9 @@ Project ini ditujukan untuk mahasiswa yang membutuhkan informasi ruang belajar k
 
 Seluruh data pada project ini masih berupa data dummy dan belum terhubung ke backend.
 
+**Preview**
+<img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
+
 ## B. Features
 
 - Landing Page dengan CTA dan pencarian awal.
@@ -98,7 +101,7 @@ Folder `components/` dan `css/` lama masih dipertahankan karena berisi implement
 1. Clone repository:
 
    ```bash
-   git clone <url-repository>
+   https://github.com/davidkhasbiya/find-study-space.git
    ```
 
 2. Buka folder `find-study-space` di VS Code.
