@@ -1,1 +1,94 @@
-.login-page .auth-visual{background-position:center}
+/* ============================================================
+   Login Page — Bootstrap Override & Custom Visual Identity
+   Hanya untuk pages/login.html
+   ============================================================ */
+
+/* Pastikan background halaman sesuai desain */
+.login-page {
+    min-height: 100vh;
+    background: var(--color-background);
+}
+
+/* ── Bootstrap form-control override ──────────────────────── */
+/* Harmoniasikan Bootstrap form-control dengan .form-input kustom */
+.auth-card .form-control {
+    min-height: 48px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0 var(--space-3);
+    font-size: 15px;
+    color: var(--color-text-primary);
+    background: var(--color-surface);
+    box-shadow: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.auth-card .form-control:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+    outline: 0;
+}
+
+.auth-card .form-control::placeholder {
+    color: #a6b2c0;
+    font-size: 14px;
+}
+
+/* Error state pada input */
+.auth-field.has-error .form-control {
+    border-color: #c24141;
+}
+
+/* Password field — beri ruang untuk tombol toggle */
+.password-field .form-control {
+    padding-right: 48px;
+}
+
+/* ── Bootstrap btn override — tombol Login ─────────────────── */
+/* .button dari global.css sudah meng-cover, tambahkan hover yang tepat */
+.auth-submit.btn:hover,
+.auth-submit.btn:active {
+    background: #183451;
+    border-color: transparent;
+    transform: translateY(-1px);
+    color: #fff;
+}
+
+.auth-submit.btn:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+    outline: 0;
+}
+
+/* ── Bootstrap form-check override (Ingat Saya) ────────────── */
+.auth-options .form-check-input {
+    accent-color: var(--color-accent);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.auth-options .form-check-input:focus {
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+    border-color: var(--color-accent);
+}
+
+/* ── Spacing tweak untuk auth-options (Bootstrap d-flex override) */
+.auth-options {
+    margin: 8px 0 18px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+/* ── Tampilan panel kanan di mobile (Bootstrap col stacking) ── */
+@media (max-width: 850px) {
+    .auth-visual__footer {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card .form-control {
+        font-size: 14px;
+    }
+}
