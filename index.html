@@ -9,7 +9,7 @@
 
     <!-- Bootstrap 5.3.8 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Custom project CSS -->
     <link rel="stylesheet" href="assets/css/global.css">
@@ -32,12 +32,7 @@
         </a>
 
         <!-- Hamburger — hanya tampil di mobile (≤767px) -->
-        <button
-            class="public-menu"
-            type="button"
-            aria-label="Buka menu"
-            aria-expanded="false"
-            aria-controls="publicNav"
+        <button class="public-menu" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="publicNav"
             data-public-menu>
             <svg class="icon" viewBox="0 0 24 24">
                 <path d="M4 7h16M4 12h16M4 17h16" />
@@ -75,8 +70,7 @@
 
                 <!-- Visual -->
                 <div class="landing-hero__visual">
-                    <img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85"
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85"
                         alt="Mahasiswa belajar bersama di ruang study space">
                     <div class="hero-info">
                         <span class="hero-info__dot"></span>
@@ -107,13 +101,8 @@
                         <!-- Lokasi -->
                         <div class="search-field">
                             <label class="search-label" for="searchLocation">Lokasi kampus</label>
-                            <input
-                                class="form-input form-control search-input"
-                                id="searchLocation"
-                                name="location"
-                                placeholder="Cari gedung atau lokasi"
-                                type="search"
-                                autocomplete="off">
+                            <input class="form-input form-control search-input" id="searchLocation" name="location"
+                                placeholder="Cari gedung atau lokasi" type="search" autocomplete="off">
                         </div>
 
                         <!-- Kapasitas -->
@@ -163,7 +152,7 @@
                     <p>Informasi yang jelas untuk membantu kamu memilih ruang belajar yang tepat.</p>
                 </div>
 
-                <div class="benefit-grid row g-4">
+                <div class="row g-4">
 
                     <div class="col-12 col-md-4">
                         <article class="benefit h-100">
@@ -221,7 +210,7 @@
                     <a class="text-link" href="pages/search.html">Lihat semua ruang</a>
                 </div>
 
-                <div class="recommendation-grid row g-4" data-recommendations></div>
+                <div class="recommendation-grid" data-recommendations></div>
 
             </div>
         </section>
@@ -240,7 +229,7 @@
                 <div class="steps row g-4">
 
                     <div class="col-12 col-md-4">
-                        <article>
+                        <article class="h-100">
                             <span>01</span>
                             <h3>Tentukan kebutuhan</h3>
                             <p>Pilih lokasi, kapasitas, dan fasilitas yang kamu perlukan.</p>
@@ -248,7 +237,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <article>
+                        <article class="h-100">
                             <span>02</span>
                             <h3>Bandingkan ruang</h3>
                             <p>Lihat detail ruang dan temukan pilihan yang paling sesuai.</p>
@@ -256,7 +245,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <article>
+                        <article class="h-100">
                             <span>03</span>
                             <h3>Datang dan mulai belajar</h3>
                             <p>Gunakan informasi lokasi untuk menuju ruang pilihanmu.</p>
@@ -294,8 +283,8 @@
 
     <!-- Bootstrap 5.3.8 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0g0eCzSvxQZA3LYyLiEDJAVsLs/F5EGLFJCWq2LgPGMcnH" crossorigin="anonymous">
-    </script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
 
     <!-- Data study spaces (global) -->
     <script src="js/data.js"></script>
