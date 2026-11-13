@@ -17,36 +17,42 @@
 <body>
     <main class="main-content">
         <div class="dashboard-content">
-            <section class="dashboard-welcome">
+            <section class="dashboard-welcome" aria-labelledby="dashboardWelcomeTitle">
                 <p class="eyebrow">BERANDA</p>
-                <h2>Selamat datang, teman belajar</h2>
-                <p>Temukan tempat yang pas untuk fokus dan mewujudkan ide hari ini.</p>
+                <h2 id="dashboardWelcomeTitle">Selamat datang, teman belajar</h2>
+                <p class="supporting-text">Temukan tempat yang pas untuk fokus dan mewujudkan ide hari ini.</p>
             </section>
-            <section class="dashboard-search-panel">
+            <section class="dashboard-search-panel" aria-labelledby="dashboardSearchTitle">
                 <p class="eyebrow">TEMUKAN RUANGMU</p>
-                <h2 class="section-heading">Mau belajar di mana hari ini?</h2>
+                <h2 class="section-heading" id="dashboardSearchTitle">Mau belajar di mana hari ini?</h2>
                 <p class="supporting-text">Atur kebutuhanmu, lalu temukan ruang yang sesuai.</p>
                 <form class="dashboard-search row g-3 align-items-end" id="dashboardSearchForm">
-                    <div class="col-12 col-md-6 col-lg-4"><label class="dashboard-field"><span>Lokasi</span><input
-                                class="form-input" name="location" type="search"
-                                placeholder="Gedung atau area kampus"></label></div>
-                    <div class="col-12 col-md-6 col-lg-3"><label class="dashboard-field"><span>Kapasitas</span><select
-                                class="form-input" name="capacity">
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <label class="dashboard-field"><span>Lokasi</span><input class="form-control form-input"
+                                name="location" type="search" placeholder="Gedung atau area kampus"></label>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <label class="dashboard-field"><span>Kapasitas</span><select class="form-select"
+                                name="capacity">
                                 <option value="">Semua kapasitas</option>
                                 <option value="small">1–10 orang</option>
                                 <option value="medium">11–30 orang</option>
                                 <option value="large">31+ orang</option>
-                            </select></label></div>
-                    <div class="col-12 col-md-6 col-lg-3"><label class="dashboard-field"><span>Fasilitas</span><select
-                                class="form-input" name="facility">
+                            </select></label>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <label class="dashboard-field"><span>Fasilitas</span><select class="form-select"
+                                name="facility">
                                 <option value="">Semua fasilitas</option>
                                 <option>WiFi</option>
                                 <option>AC</option>
                                 <option>Proyektor</option>
                                 <option>Stop Kontak</option>
-                            </select></label></div>
-                    <div class="col-12 col-md-6 col-lg-2"><button class="button w-100" type="submit">Cari Study
-                            Space</button></div>
+                            </select></label>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-2">
+                        <button class="button btn w-100" type="submit">Cari Study Space</button>
+                    </div>
                 </form>
             </section>
             <section class="dashboard-section">
@@ -59,7 +65,7 @@
                 </div>
                 <div class="dashboard-cards row g-4" id="dashboardRecommendations"></div>
             </section>
-            <section class="dashboard-info-grid row g-4">
+            <section class="dashboard-info-grid row g-3" aria-label="Informasi study space">
                 <div class="col-12 col-md-6">
                     <article><svg class="icon" viewBox="0 0 24 24">
                             <path d="M12 3v18M5 8a7 7 0 0 1 14 0" />
