@@ -61,9 +61,13 @@
     min-height: 48px;
     border-color: var(--color-border);
     border-radius: var(--radius-sm);
-    color: var(--color-text-primary);
+    color: var(--color-form-text);
     font-size: 14px;
     font-weight: 400;
+}
+
+.dashboard-field .form-select {
+    background-color: var(--color-surface);
 }
 
 .dashboard-field .form-control:focus,
@@ -106,7 +110,7 @@
 }
 
 .dashboard-link:hover {
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     text-decoration: underline;
     text-underline-offset: 3px
 }
@@ -180,11 +184,11 @@
 }
 
 .dashboard-cards .availability.is-available {
-    color: #087f75
+    color: var(--color-success)
 }
 
 .dashboard-cards .availability.is-unavailable {
-    color: #c24141
+    color: var(--color-error)
 }
 
 .dashboard-cards .study-card__footer {
@@ -219,7 +223,7 @@
     border-radius: 4px;
     padding: 4px 8px;
     background: var(--color-accent-soft);
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     font-size: 12px;
     font-weight: 600;
     white-space: nowrap

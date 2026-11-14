@@ -17,7 +17,7 @@
     border-radius: var(--radius-sm);
     padding: 0 var(--space-3);
     font-size: 15px;
-    color: var(--color-text-primary);
+    color: var(--color-form-text);
     background: var(--color-surface);
     box-shadow: none;
     transition: border-color .2s, box-shadow .2s;
@@ -30,7 +30,7 @@
 }
 
 .auth-card .form-control::placeholder {
-    color: #a6b2c0;
+    color: var(--color-form-placeholder);
     font-size: 14px;
 }
 

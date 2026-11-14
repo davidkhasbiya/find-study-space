@@ -47,7 +47,7 @@
 
 .detail-heading-row h1 {
     margin: 0 0 8px;
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
@@ -103,7 +103,7 @@
 }
 
 .detail-summary strong {
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     font-size: 16px;
 }
 
@@ -123,12 +123,12 @@
 
 .is-available {
     background: var(--color-accent-soft);
-    color: #087f75;
+    color: var(--color-success);
 }
 
 .is-unavailable {
-    background: #fff0f0;
-    color: #c24141;
+    background: var(--color-background-unavailable);
+    color: var(--color-error);
 }
 
 .detail-grid {
@@ -299,11 +299,11 @@
 }
 
 .other-grid .availability.is-available {
-    color: #087f75;
+    color: var(--color-success);
 }
 
 .other-grid .availability.is-unavailable {
-    color: #c24141;
+    color: var(--color-error);
 }
 
 .other-grid .study-card__footer {
@@ -321,7 +321,7 @@
     border-radius: 4px;
     padding: 4px 8px;
     background: var(--color-accent-soft);
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     font-size: 12px;
     font-weight: 600;
     white-space: nowrap;

@@ -132,7 +132,7 @@
 
 .field-error {
     min-height: 1.15em;
-    color: #b8323c;
+    color: var(--color-error-form);
     font-size: 13px;
     font-weight: 400;
 }
@@ -159,7 +159,7 @@
 .settings-status {
     min-height: 20px;
     margin: 12px 0 0;
-    color: #087f75;
+    color: var(--color-success);
     font-size: 14px;
 }
 
@@ -284,7 +284,7 @@
 
 .password-toggle:hover {
     background: var(--color-accent-soft);
-    color: var(--color-primary);
+    color: var(--color-text-primary);
 }
 
 .password-toggle:focus-visible {
@@ -299,7 +299,7 @@
 
 .auth-dark {
     background: #152b45 !important;
-    color: #e8f0f6;
+    color: var(--color-text-primary);
 }
 
 .auth-dark .settings-card {
@@ -311,17 +311,17 @@
 .auth-dark .settings-header p:last-child,
 .auth-dark .toggle-row small,
 .auth-dark .field-hint {
-    color: #b4c7d7;
+    color: var(--color-text-secondary);
 }
 
 .auth-dark .form-input {
     border-color: #3c5b76;
     background: #132b44;
-    color: #fff;
+    color: var(--color-form-text);
 }
 
 .auth-dark .form-input::placeholder {
-    color: #9eb2c3;
+    color: var(--color-form-placeholder);
 }
 
 .auth-dark .settings-header h2,
@@ -329,7 +329,7 @@
 .auth-dark .settings-field,
 .auth-dark .toggle-row strong,
 .auth-dark .navbar__title {
-    color: #fff;
+    color: var(--color-text-primary);
 }
 
 .auth-dark .toggle-ui {
@@ -345,7 +345,7 @@
 .auth-dark .button--secondary {
     border-color: #49657e;
     background: #193553;
-    color: #e8f0f6;
+    color: var(--color-text-primary);
 }
 
 .auth-dark .button--secondary:hover {
@@ -353,11 +353,11 @@
 }
 
 .auth-dark .settings-status {
-    color: #70d7c8;
+    color: var(--color-success);
 }
 
 .auth-dark .field-error {
-    color: #ff9a9f;
+    color: var(--color-error-form);
 }
 
 @media (max-width: 900px) {
