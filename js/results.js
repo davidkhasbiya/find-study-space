@@ -13,13 +13,24 @@ const empty = document.querySelector('#emptyState');
 const pagination = document.querySelector('#pagination');
 const sortControl = document.querySelector('#sortResults');
 const pageSize = 3;
+const capacityCategories = {
+    small: { minimum: 1, maximum: 10, label: '1–10 orang' },
+    medium: { minimum: 11, maximum: 30, label: '11–30 orang' },
+    large: { minimum: 31, maximum: null, label: '31+ orang' }
+};
 let currentPage = 1;
 const card = (space) => renderStudyCard(space);
 function readFilters() {
+    const capacityValue = form.elements.capacity.value;
+    const capacityRange = capacityCategories[capacityValue] || null;
+    const capacityMinimum = Number(capacityValue) || 0;
+
     return {
         name: form.elements.name.value.trim().toLowerCase(),
         location: form.elements.location.value,
-        capacity: Number(form.elements.capacity.value) || 0,
+        capacity: capacityRange ? 0 : capacityMinimum,
+        capacityRange,
+        capacityLabel: capacityRange?.label || (capacityMinimum ? `${capacityMinimum}+` : ''),
         facility: Array.from(form.querySelectorAll('input[name="facility"]:checked'), (input) => input.value)
     };
 }
@@ -42,6 +53,10 @@ function render() {
     let filtered = spaces.filter((space) =>
         (!filters.name || space.name.toLowerCase().includes(filters.name)) &&
         (!filters.location || space.location === filters.location) &&
+        (!filters.capacityRange || (
+            space.capacity >= filters.capacityRange.minimum &&
+            (filters.capacityRange.maximum === null || space.capacity <= filters.capacityRange.maximum)
+        )) &&
         (!filters.capacity || space.capacity >= filters.capacity) &&
         filters.facility.every((facility) => space.facilities.includes(facility))
     );
@@ -60,7 +75,7 @@ function render() {
     const filterValues = [
         ['name', filters.name],
         ['location', filters.location],
-        ['capacity', filters.capacity ? `${filters.capacity}+` : ''],
+        ['capacity', filters.capacityLabel],
         ['facility', filters.facility.join(', ')]
     ];
     for (const [key, value] of filterValues) {

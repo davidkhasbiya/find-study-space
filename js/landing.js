@@ -3,7 +3,7 @@ import { renderStudyCard } from './components.js';
 // ── Rekomendasi study space ──────────────────────────────────────────────────
 const recommendations = document.querySelector('[data-recommendations]');
 const fallback = window.studySpaces || [];
-const names = ['Perpustakaan Pusat', 'Gedung Teknik', 'Student Center'];
+const names = ['Perpustakaan Pusat', 'Ruang Diskusi A', 'Student Center'];
 
 const spaces = names.map((name, index) =>
     fallback.find((space) => space.name === name) || {

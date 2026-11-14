@@ -43,10 +43,17 @@
                         <label class="results-field"><span>Kapasitas minimum</span><select
                                 class="form-select form-input" name="capacity">
                                 <option value="">Semua kapasitas</option>
-                                <option value="1">1+ orang</option>
-                                <option value="5">5+ orang</option>
-                                <option value="11">11+ orang</option>
-                                <option value="21">21+ orang</option>
+                                <optgroup label="Kategori kapasitas">
+                                    <option value="small">1–10 orang</option>
+                                    <option value="medium">11–30 orang</option>
+                                    <option value="large">31+ orang</option>
+                                </optgroup>
+                                <optgroup label="Kapasitas minimum">
+                                    <option value="1">1+ orang</option>
+                                    <option value="5">5+ orang</option>
+                                    <option value="11">11+ orang</option>
+                                    <option value="21">21+ orang</option>
+                                </optgroup>
                             </select></label>
                     </div>
                     <div class="col-12 col-xl-8">
@@ -59,6 +66,9 @@
                                 <div class="col"><label class="facility-option"><input class="form-check-input"
                                             id="facilityAc" type="checkbox" name="facility"
                                             value="AC"><span>AC</span></label></div>
+                                <div class="col"><label class="facility-option"><input class="form-check-input"
+                                            id="facilityProjector" type="checkbox" name="facility"
+                                            value="Proyektor"><span>Proyektor</span></label></div>
                                 <div class="col"><label class="facility-option"><input class="form-check-input"
                                             id="facilityPower" type="checkbox" name="facility"
                                             value="Stop Kontak"><span>Stop Kontak</span></label></div>
