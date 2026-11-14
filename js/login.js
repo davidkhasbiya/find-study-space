@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const status = document.querySelector('#loginStatus');
   const emailError = document.querySelector('#emailError');
   const passwordError = document.querySelector('#passwordError');
+  const updateFieldState = (input, error) => {
+    const invalid = Boolean(error.textContent);
+    input.setAttribute('aria-invalid', String(invalid));
+    input.closest('.auth-field')?.classList.toggle('has-error', invalid);
+  };
 
   // ── Password visibility toggle ──────────────────────────────────────────
   const eyeIconOpen = `<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="2.5"/>`;
@@ -24,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#forgotPassword')?.addEventListener('click', (event) => {
     event.preventDefault();
     status.textContent = 'Fitur pemulihan kata sandi belum terhubung ke backend.';
-    status.style.color = '#c24141';
+    status.classList.add('auth-status--error');
   });
 
   // ── Validasi & submit ───────────────────────────────────────────────────
@@ -35,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     emailError.textContent = '';
     passwordError.textContent = '';
     status.textContent = '';
-    status.style.color = '';
+    status.classList.remove('auth-status--error');
 
     let valid = true;
 
@@ -57,9 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
       valid = false;
     }
 
+    updateFieldState(email, emailError);
+    updateFieldState(password, passwordError);
+
     if (valid) {
       status.textContent = 'Login berhasil untuk simulasi frontend. Mengarahkan ke dashboard...';
-      status.style.color = '';
       setTimeout(() => {
         window.location.href = 'dashboard.html';
       }, 1200);

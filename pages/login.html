@@ -65,7 +65,7 @@
                     <div class="auth-field">
                         <label for="email" class="form-label">Email universitas</label>
                         <input class="form-input form-control" id="email" type="email" placeholder="nama@kampus.ac.id"
-                            autocomplete="email">
+                            autocomplete="email" aria-describedby="emailError" aria-invalid="false">
                         <span class="field-error" id="emailError" role="alert"></span>
                     </div>
 
@@ -74,7 +74,8 @@
                         <label for="password" class="form-label">Kata sandi</label>
                         <div class="password-field">
                             <input class="form-input form-control" id="password" type="password"
-                                placeholder="Masukkan kata sandi" autocomplete="current-password">
+                                placeholder="Masukkan kata sandi" autocomplete="current-password"
+                                aria-describedby="passwordError" aria-invalid="false">
                             <button class="password-toggle" id="passwordToggle" type="button"
                                 aria-label="Tampilkan kata sandi">
                                 <svg class="icon" viewBox="0 0 24 24" id="eyeIcon">

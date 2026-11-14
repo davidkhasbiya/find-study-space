@@ -65,7 +65,7 @@
                     <div class="auth-field">
                         <label for="fullName" class="form-label">Nama mahasiswa</label>
                         <input class="form-input form-control" id="fullName" type="text" placeholder="Nama lengkap"
-                            autocomplete="name">
+                            autocomplete="name" aria-describedby="fullNameError" aria-invalid="false">
                         <span class="field-error" id="fullNameError" role="alert"></span>
                     </div>
 
@@ -73,7 +73,8 @@
                     <div class="auth-field">
                         <label for="registerEmail" class="form-label">Email universitas</label>
                         <input class="form-input form-control" id="registerEmail" type="email"
-                            placeholder="nama@kampus.ac.id" autocomplete="email">
+                            placeholder="nama@kampus.ac.id" autocomplete="email" aria-describedby="registerEmailError"
+                            aria-invalid="false">
                         <span class="field-error" id="registerEmailError" role="alert"></span>
                     </div>
 
@@ -82,7 +83,8 @@
                         <label for="registerPassword" class="form-label">Kata sandi</label>
                         <div class="password-field">
                             <input class="form-input form-control" id="registerPassword" type="password"
-                                placeholder="Minimal 8 karakter" autocomplete="new-password">
+                                placeholder="Minimal 8 karakter" autocomplete="new-password"
+                                aria-describedby="registerPasswordError" aria-invalid="false">
                             <button class="password-toggle" type="button" data-target="registerPassword"
                                 aria-label="Tampilkan kata sandi">
                                 <svg class="icon" viewBox="0 0 24 24" id="eyeIconPassword">
@@ -99,7 +101,8 @@
                         <label for="confirmPassword" class="form-label">Konfirmasi kata sandi</label>
                         <div class="password-field">
                             <input class="form-input form-control" id="confirmPassword" type="password"
-                                placeholder="Ulangi kata sandi" autocomplete="new-password">
+                                placeholder="Ulangi kata sandi" autocomplete="new-password"
+                                aria-describedby="confirmPasswordError" aria-invalid="false">
                             <button class="password-toggle" type="button" data-target="confirmPassword"
                                 aria-label="Tampilkan kata sandi">
                                 <svg class="icon" viewBox="0 0 24 24" id="eyeIconConfirm">
