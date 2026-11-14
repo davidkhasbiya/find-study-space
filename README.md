@@ -11,6 +11,12 @@ Mahasiswa dapat melihat informasi ruang, membandingkan fasilitas, mencari lokasi
 Proyek ini dikembangkan sebagai aplikasi frontend menggunakan HTML, CSS, JavaScript, dan Bootstrap. Data ruang belajar yang digunakan masih berupa data dummy dan belum terhubung dengan backend atau database.
 
 **Preview**
+<<<<<<< HEAD
+=======
+<img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
+
+## B. Features
+>>>>>>> origin/main
 
 <img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
 
@@ -164,6 +170,7 @@ find-study-space/
 
    ```bash
    git clone https://github.com/davidkhasbiya/find-study-space.git
+
    ```
 
 2. Masuk ke direktori proyek:
