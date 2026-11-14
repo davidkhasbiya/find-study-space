@@ -7,9 +7,11 @@
   --font-size-body: 16px; --font-size-page: 32px; --font-size-section: 24px; --font-size-card: 20px; --font-size-supporting: 14px;
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
   --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px; --shadow-subtle: 0 2px 12px rgba(32,63,102,.07);
-  --icon-sm: 18px; --icon-md: 22px; --icon-lg: 28px; --sidebar-width: 260px;
+  --icon-sm: 18px; --icon-md: 22px; --icon-lg: 28px;
+  --sidebar-width-expanded: 260px; --sidebar-width-collapsed: 76px; --sidebar-width: var(--sidebar-width-expanded);
 }
 * { box-sizing: border-box; } html { scroll-behavior: smooth; }
+body[data-sidebar-collapsed="true"] { --sidebar-width: var(--sidebar-width-collapsed); }
 body { margin: 0; background: var(--color-background); color: var(--color-text-primary); font: var(--font-size-body)/1.6 var(--font-family); }
 a { color: inherit; text-decoration: none; } button, input, select { font: inherit; }
 .page-heading { margin: 0; font-size: var(--font-size-page); line-height: 1.2; }
