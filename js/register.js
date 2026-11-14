@@ -1,5 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('#registerForm'); const $ = (id) => document.querySelector(id);
-  document.querySelectorAll('.password-toggle').forEach((button) => button.addEventListener('click', () => { const input = $(`#${button.dataset.target}`); const visible = input.type === 'password'; input.type = visible ? 'text' : 'password'; button.setAttribute('aria-label', visible ? 'Sembunyikan kata sandi' : 'Tampilkan kata sandi'); }));
-  form?.addEventListener('submit', (event) => { event.preventDefault(); document.querySelectorAll('.field-error').forEach((node) => { node.textContent = ''; }); $('#registerStatus').textContent = ''; const name = $('#fullName'), email = $('#registerEmail'), password = $('#registerPassword'), confirm = $('#confirmPassword'); let valid = true; if (!name.value.trim()) { $('#fullNameError').textContent = 'Nama mahasiswa wajib diisi.'; valid = false; } if (!email.value.trim()) { $('#registerEmailError').textContent = 'Email wajib diisi.'; valid = false; } else if (!email.validity.valid) { $('#registerEmailError').textContent = 'Masukkan format email yang valid.'; valid = false; } if (password.value.length < 8) { $('#registerPasswordError').textContent = 'Kata sandi minimal 8 karakter.'; valid = false; } if (confirm.value !== password.value) { $('#confirmPasswordError').textContent = 'Konfirmasi kata sandi harus sama.'; valid = false; } if (valid) { $('#registerStatus').textContent = 'Pendaftaran berhasil untuk simulasi frontend. Mengarahkan ke login...'; setTimeout(() => { window.location.href = 'login.html'; }, 700); } });
+  const form = document.querySelector('#registerForm');
+  const $ = (id) => document.querySelector(id);
+  const fields = [
+    [$('#fullName'), $('#fullNameError')],
+    [$('#registerEmail'), $('#registerEmailError')],
+    [$('#registerPassword'), $('#registerPasswordError')],
+    [$('#confirmPassword'), $('#confirmPasswordError')]
+  ];
+
+  document.querySelectorAll('.password-toggle').forEach((button) => {
+    button.addEventListener('click', () => {
+      const input = $(`#${button.dataset.target}`);
+      const visible = input.type === 'password';
+      input.type = visible ? 'text' : 'password';
+      button.setAttribute('aria-label', visible ? 'Sembunyikan kata sandi' : 'Tampilkan kata sandi');
+    });
+  });
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    document.querySelectorAll('.field-error').forEach((node) => {
+      node.textContent = '';
+    });
+    $('#registerStatus').textContent = '';
+
+    const name = $('#fullName');
+    const email = $('#registerEmail');
+    const password = $('#registerPassword');
+    const confirm = $('#confirmPassword');
+    let valid = true;
+
+    if (!name.value.trim()) {
+      $('#fullNameError').textContent = 'Nama mahasiswa wajib diisi.';
+      valid = false;
+    }
+    if (!email.value.trim()) {
+      $('#registerEmailError').textContent = 'Email wajib diisi.';
+      valid = false;
+    } else if (!email.validity.valid) {
+      $('#registerEmailError').textContent = 'Masukkan format email yang valid.';
+      valid = false;
+    }
+    if (password.value.length < 8) {
+      $('#registerPasswordError').textContent = 'Kata sandi minimal 8 karakter.';
+      valid = false;
+    }
+    if (confirm.value !== password.value) {
+      $('#confirmPasswordError').textContent = 'Konfirmasi kata sandi harus sama.';
+      valid = false;
+    }
+
+    fields.forEach(([input, error]) => {
+      const invalid = Boolean(error.textContent);
+      input.setAttribute('aria-invalid', String(invalid));
+      input.closest('.auth-field')?.classList.toggle('has-error', invalid);
+    });
+
+    if (valid) {
+      $('#registerStatus').textContent = 'Pendaftaran berhasil untuk simulasi frontend. Mengarahkan ke login...';
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 700);
+    }
+  });
 });

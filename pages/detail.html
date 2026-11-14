@@ -1,1 +1,79 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Detail study space"><title>Detail Study Space | Find Study Space</title><link rel="stylesheet" href="../assets/css/global.css"><link rel="stylesheet" href="../assets/css/components/sidebar.css"><link rel="stylesheet" href="../assets/css/components/navbar.css"><link rel="stylesheet" href="../assets/css/detail.css"></head><body><main class="main-content"><div class="detail-content"><div class="detail-breadcrumb"><a href="results.html">Hasil Pencarian</a><span>/</span><span>Detail Study Space</span></div><section id="detailView" hidden><div class="detail-heading-row"><div><p class="eyebrow">STUDY SPACE</p><h2 id="spaceName"></h2><p class="detail-location" id="spaceLocation"></p></div><a class="button button--secondary" href="results.html">Kembali ke hasil</a></div><div class="detail-hero"><img id="spaceImage" alt=""><div class="detail-summary"><span class="availability" id="spaceStatus"></span><div><strong id="spaceCapacity"></strong><small>Kapasitas maksimum</small></div><div><strong id="spaceHours"></strong><small>Jam operasional</small></div></div></div><div class="detail-grid"><article class="detail-card"><p class="eyebrow">TENTANG RUANG</p><h2 class="section-heading">Informasi study space</h2><p id="spaceDescription" class="supporting-text"></p><div class="facility-list" id="facilityList"></div></article><aside class="detail-card location-card"><p class="eyebrow">INFORMASI LOKASI</p><h2 class="section-heading" id="buildingName"></h2><p class="supporting-text" id="floorName"></p><p class="supporting-text">Lokasi berada di area kampus yang mudah dijangkau dari jalur utama mahasiswa.</p><a class="button" id="directionLink" href="location.html">Lihat Petunjuk Arah</a></aside></div><section class="other-spaces"><div class="detail-section-heading"><div><p class="eyebrow">PILIHAN LAIN</p><h2 class="section-heading">Study space lainnya</h2></div><a href="search.html">Cari ruang lain</a></div><div class="other-grid" id="otherSpaces"></div></section></section><section class="detail-empty" id="notFound"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><h2>Study space tidak ditemukan</h2><p>Study space yang kamu cari tidak tersedia atau ID-nya tidak valid.</p><a class="button" href="results.html">Kembali ke hasil pencarian</a></section></div></main><script type="module" src="../js/detail.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Detail study space">
+    <title>Detail Study Space | Find Study Space</title>
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../assets/css/detail.css">
+</head>
+
+<body class="detail-page">
+    <main class="main-content">
+        <div class="detail-content">
+            <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+                <a href="results.html">Hasil Pencarian</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Detail Study Space</span>
+            </nav>
+            <section id="detailView" aria-labelledby="spaceName" hidden>
+                <div class="detail-heading-row">
+                    <div>
+                        <p class="eyebrow">STUDY SPACE</p>
+                        <h1 id="spaceName"></h1>
+                        <p class="detail-location" id="spaceLocation"></p>
+                    </div><a class="button button--secondary" href="results.html">Kembali ke hasil</a>
+                </div>
+                <div class="detail-hero"><img id="spaceImage" alt="">
+                    <div class="detail-summary"><span class="availability" id="spaceStatus"></span>
+                        <div><strong id="spaceCapacity"></strong><small>Kapasitas maksimum</small></div>
+                        <div><strong id="spaceHours"></strong><small>Jam operasional</small></div>
+                    </div>
+                </div>
+                <div class="detail-grid">
+                    <article class="detail-card">
+                        <p class="eyebrow">TENTANG RUANG</p>
+                        <h2 class="section-heading">Informasi study space</h2>
+                        <p id="spaceDescription" class="supporting-text"></p>
+                        <div class="facility-list" id="facilityList"></div>
+                    </article>
+                    <aside class="detail-card location-card">
+                        <p class="eyebrow">INFORMASI LOKASI</p>
+                        <h2 class="section-heading" id="buildingName"></h2>
+                        <p class="supporting-text" id="floorName"></p>
+                        <p class="supporting-text">Lokasi berada di area kampus yang mudah dijangkau dari jalur utama
+                            mahasiswa.</p><a class="button" id="directionLink" href="location.html">Lihat Petunjuk
+                            Arah</a>
+                    </aside>
+                </div>
+                <section class="other-spaces">
+                    <div class="detail-section-heading">
+                        <div>
+                            <p class="eyebrow">PILIHAN LAIN</p>
+                            <h2 class="section-heading">Study space lainnya</h2>
+                        </div><a href="search.html">Cari ruang lain</a>
+                    </div>
+                    <div class="other-grid" id="otherSpaces"></div>
+                </section>
+            </section>
+            <section class="detail-empty" id="notFound"><svg class="icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="6" />
+                    <path d="m16 16 4 4" />
+                </svg>
+                <h2>Study space tidak ditemukan</h2>
+                <p>Study space yang kamu cari tidak tersedia atau ID-nya tidak valid.</p><a class="button"
+                    href="results.html">Kembali ke hasil pencarian</a>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="../js/detail.js"></script>
+</body>
+
+</html>

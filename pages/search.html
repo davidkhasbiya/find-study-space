@@ -1,1 +1,117 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Cari study space sesuai kebutuhanmu"><title>Cari Study Space | Find Study Space</title><link rel="stylesheet" href="../assets/css/global.css"><link rel="stylesheet" href="../assets/css/components/sidebar.css"><link rel="stylesheet" href="../assets/css/components/navbar.css"><link rel="stylesheet" href="../assets/css/search.css"></head><body><main class="main-content"><div class="search-page-content"><section class="search-page-header"><p class="eyebrow">EKSPLORE RUANG KAMPUS</p><h2>Cari Study Space</h2><p>Ruang yang tepat dimulai dari kebutuhanmu. Yuk, atur pencarianmu.</p></section><div class="search-layout"><section class="search-form-card"><p class="eyebrow">FILTER PENCARIAN</p><h2 class="section-heading">Sesuaikan ruang belajarmu</h2><p class="supporting-text">Isi kriteria di bawah. Tidak semua kolom wajib diisi.</p><form id="searchPageForm" novalidate><label class="search-field"><span>Nama ruang</span><input class="form-input" id="spaceName" name="name" type="search" placeholder="Cari nama ruang, mis. Ruang Diskusi A"></label><label class="search-field"><span>Lokasi gedung</span><select class="form-input" id="building" name="location"><option value="">Semua gedung</option><option value="Gedung Teknik">Gedung Teknik</option><option value="Perpustakaan">Perpustakaan Pusat</option><option value="Student Center">Student Center</option></select></label><label class="search-field"><span>Kapasitas ruang</span><select class="form-input" id="capacity" name="capacity"><option value="">Semua kapasitas</option><option value="1">1–4 orang</option><option value="5">5–10 orang</option><option value="11">11–20 orang</option><option value="21">Lebih dari 20 orang</option></select></label><fieldset class="facility-field"><legend>Fasilitas yang dibutuhkan</legend><p class="supporting-text">Kamu bisa memilih lebih dari satu fasilitas.</p><div class="checkbox-grid"><label><input type="checkbox" name="facility" value="WiFi"><span>Wi-Fi</span></label><label><input type="checkbox" name="facility" value="Stop Kontak"><span>Stop Kontak</span></label><label><input type="checkbox" name="facility" value="AC"><span>AC</span></label><label><input type="checkbox" name="facility" value="Papan Tulis"><span>Whiteboard</span></label></div></fieldset><p class="search-error" id="searchError" role="alert"></p><div class="search-actions"><button class="button" type="submit"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>Cari Ruang</button><button class="button button--secondary" id="resetButton" type="button">Reset Filter</button></div></form></section><aside class="search-support"><div class="support-visual"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="Interior study space kampus"><div class="support-visual__label"><span class="support-dot"></span><span>Ruang yang mendukung fokusmu</span></div></div><div class="support-copy"><p class="eyebrow">TIPS MEMILIH RUANG</p><h2 class="section-heading">Temukan ritme belajarmu.</h2><p class="supporting-text">Mulai dari aktivitas yang ingin kamu lakukan, lalu pilih ruang dengan suasana dan fasilitas yang paling mendukung.</p><div class="capacity-note"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg><div><strong>Kapasitas, bukan ketersediaan.</strong><p>Informasi kapasitas membantu kamu memilih ruang yang nyaman untuk jumlah orang yang tepat.</p></div></div></div></aside></div></div></main><script src="../js/data.js"></script><script type="module" src="../js/search.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Cari study space sesuai kebutuhanmu">
+    <title>Cari Study Space | Find Study Space</title>
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../assets/css/search.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="search-page-content">
+            <section class="search-page-header">
+                <p class="eyebrow">EKSPLORE RUANG KAMPUS</p>
+                <h2>Temukan ruang yang sesuai</h2>
+                <p>Ruang yang tepat dimulai dari kebutuhanmu. Yuk, atur pencarianmu.</p>
+            </section>
+            <div class="search-layout row g-4 align-items-start">
+                <div class="col-12 col-lg-7">
+                    <section class="search-form-card">
+                        <p class="eyebrow">FILTER PENCARIAN</p>
+                        <h2 class="section-heading">Sesuaikan ruang belajarmu</h2>
+                        <p class="supporting-text">Isi kriteria di bawah. Tidak semua kolom wajib diisi.</p>
+                        <form class="row g-3" id="searchPageForm" novalidate>
+                            <div class="col-12">
+                                <label class="search-field"><span>Nama ruang</span><input
+                                        class="form-control form-input" id="spaceName" name="name" type="search"
+                                        placeholder="Cari nama ruang, mis. Ruang Diskusi A"></label>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="search-field"><span>Lokasi gedung</span><select
+                                        class="form-select form-input" id="building" name="location">
+                                        <option value="">Semua gedung</option>
+                                        <option value="Perpustakaan Pusat">Perpustakaan Pusat</option>
+                                        <option value="Gedung Fakultas">Gedung Fakultas</option>
+                                        <option value="Student Center">Student Center</option>
+                                        <option value="Gedung Teknik">Gedung Teknik</option>
+                                    </select></label>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="search-field"><span>Kapasitas ruang</span><select
+                                        class="form-select form-input" id="capacity" name="capacity">
+                                        <option value="">Semua kapasitas</option>
+                                        <option value="1">1+ orang</option>
+                                        <option value="5">5+ orang</option>
+                                        <option value="11">11+ orang</option>
+                                        <option value="21">21+ orang</option>
+                                    </select></label>
+                            </div>
+                            <fieldset class="facility-field col-12">
+                                <legend>Fasilitas yang dibutuhkan</legend>
+                                <p class="supporting-text">Kamu bisa memilih lebih dari satu fasilitas.</p>
+                                <div class="checkbox-grid"><label><input type="checkbox" name="facility"
+                                            value="WiFi"><span>Wi-Fi</span></label><label><input type="checkbox"
+                                            name="facility" value="Stop Kontak"><span>Stop Kontak</span></label><label>
+                                        <input type="checkbox" name="facility" value="AC"><span>AC</span></label><label>
+                                        <input type="checkbox" name="facility" value="Whiteboard"><span>Papan
+                                            Tulis</span>
+                                    </label><label><input type="checkbox" name="facility"
+                                            value="Sofa"><span>Sofa</span></label></div>
+                            </fieldset>
+                            <p class="search-error col-12" id="searchError" role="alert"></p>
+                            <div class="search-actions col-12">
+                                <button class="button btn" type="submit"><svg class="icon" viewBox="0 0 24 24">
+                                        <circle cx="11" cy="11" r="6" />
+                                        <path d="m16 16 4 4" />
+                                    </svg>Cari Ruang</button>
+                                <button class="button button--secondary btn" id="resetButton" type="button">Reset
+                                    Filter</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <aside class="search-support">
+                        <div class="support-visual"><img
+                                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
+                                alt="Interior study space kampus">
+                            <div class="support-visual__label"><span class="support-dot"></span><span>Ruang yang
+                                    mendukung fokusmu</span></div>
+                        </div>
+                        <div class="support-copy">
+                            <p class="eyebrow">TIPS MEMILIH RUANG</p>
+                            <h2 class="section-heading">Temukan ritme belajarmu.</h2>
+                            <p class="supporting-text">Mulai dari aktivitas yang ingin kamu lakukan, lalu pilih ruang
+                                dengan suasana dan fasilitas yang paling mendukung.</p>
+                            <div class="capacity-note"><svg class="icon" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 10v6M12 7h.01" />
+                                </svg>
+                                <div><strong>Kapasitas, bukan ketersediaan.</strong>
+                                    <p>Informasi kapasitas membantu kamu memilih ruang yang nyaman untuk jumlah orang
+                                        yang tepat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="../js/data.js"></script>
+    <script type="module" src="../js/search.js"></script>
+</body>
+
+</html>

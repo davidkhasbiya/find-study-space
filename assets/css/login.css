@@ -1,1 +1,5 @@
-.login-page .auth-visual{background-position:center}
+.login-page .auth-options {
+    gap: 16px;
+    margin: 8px 0 18px;
+    font-size: 14px;
+}

@@ -6,147 +6,292 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Temukan ruang belajar ideal di lingkungan kampus.">
     <title>Find Study Space Kampus</title>
+
+    <script src="assets/js/theme.js"></script>
+
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Custom project CSS -->
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 
 <body class="landing-page">
-    <header class="public-navbar"><a class="public-brand" href="index.html"><span>FS</span>Find Study
-            <b>Space</b></a><button class="public-menu" type="button" aria-label="Buka menu" data-public-menu><svg
-                class="icon" viewBox="0 0 24 24">
+
+    <!-- ===================================================
+         NAVBAR
+         Layout custom flexbox — tidak memakai Bootstrap navbar class.
+         Bootstrap JS collapse tidak dipakai; toggle dikontrol landing.js.
+         Desktop: brand kiri | nav kanan (satu baris, hamburger tersembunyi)
+         Mobile : brand kiri | hamburger kanan; nav expand ke bawah
+    =================================================== -->
+    <header class="public-navbar">
+        <!-- Brand -->
+        <a class="public-brand" href="index.html">
+            <span>FS</span>Find Study <b>Space</b>
+        </a>
+
+        <!-- Hamburger — hanya tampil di mobile (≤767px) -->
+        <button class="public-menu" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="publicNav"
+            data-public-menu>
+            <svg class="icon" viewBox="0 0 24 24">
                 <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg></button>
-        <nav class="public-nav" data-public-nav><a class="is-active" href="#home">Beranda</a><a href="#search">Cari
-                Ruang</a><a href="#about">Tentang</a><a class="button" href="pages/login.html">Login</a></nav>
+            </svg>
+        </button>
+
+        <!-- Nav links — desktop: row; mobile: column via .is-open -->
+        <nav class="public-nav" id="publicNav" data-public-nav>
+            <a class="nav-item is-active" href="#home">Beranda</a>
+            <a class="nav-item" href="#search">Cari Ruang</a>
+            <a class="nav-item" href="#about">Tentang</a>
+            <a class="button btn nav-login" href="pages/login.html">Login</a>
+        </nav>
     </header>
+
     <main>
+
+        <!-- ===================================================
+             HERO SECTION
+        =================================================== -->
         <section class="landing-hero" id="home">
             <div class="landing-container landing-hero__grid">
+
+                <!-- Copy -->
                 <div class="landing-hero__copy">
                     <p class="eyebrow">STUDY SPACE KAMPUS</p>
                     <h1>Temukan Ruang Belajar <span>Ideal di Kampus</span></h1>
                     <p>Dari fokus mandiri hingga diskusi kelompok. Temukan ruang nyaman dengan fasilitas yang kamu
                         butuhkan, tepat di lingkungan kampusmu.</p>
-                    <div class="hero-actions"><a class="button" href="#search">Cari Study Space</a><a
-                            class="button button--secondary" href="pages/location.html">Jelajahi Lokasi</a></div>
-                </div>
-                <div class="landing-hero__visual"><img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85"
-                        alt="Mahasiswa belajar bersama di ruang study space">
-                    <div class="hero-info"><span class="hero-info__dot"></span>
-                        <div><strong>Ruang nyaman tersedia</strong><small>Temukan tempat terbaik untukmu</small></div>
+                    <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+                        <a class="button btn" href="#search">Cari Study Space</a>
+                        <a class="button button--secondary btn" href="pages/location.html">Jelajahi Lokasi</a>
                     </div>
                 </div>
+
+                <!-- Visual -->
+                <div class="landing-hero__visual">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85"
+                        alt="Mahasiswa belajar bersama di ruang study space">
+                    <div class="hero-info">
+                        <span class="hero-info__dot" aria-hidden="true"></span>
+                        <div>
+                            <strong>Ruang nyaman tersedia</strong>
+                            <small>Temukan tempat terbaik untukmu</small>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
+
+        <!-- ===================================================
+             SEARCH SECTION
+        =================================================== -->
         <section class="search-section" id="search">
             <div class="landing-container">
                 <div class="search-panel">
-                    <div>
+
+                    <div class="mb-4">
                         <p class="eyebrow">MULAI PENCARIAN</p>
                         <h2 class="section-heading">Cari study space sesuai kebutuhanmu</h2>
                     </div>
-                    <form class="landing-search" data-search-form><label class="form-control"><span>Lokasi
-                                kampus</span><input class="form-input" name="location"
-                                placeholder="Cari gedung atau lokasi" type="search"></label><label
-                            class="form-control"><span>Kapasitas</span><select class="form-input" name="capacity">
+
+                    <form class="landing-search" data-search-form novalidate>
+
+                        <!-- Lokasi -->
+                        <div class="search-field">
+                            <label class="search-label" for="searchLocation">Lokasi kampus</label>
+                            <input class="form-input form-control search-input" id="searchLocation" name="location"
+                                placeholder="Cari gedung atau lokasi" type="search" autocomplete="off">
+                        </div>
+
+                        <!-- Kapasitas -->
+                        <div class="search-field">
+                            <label class="search-label" for="searchCapacity">Kapasitas</label>
+                            <select class="form-input form-select search-input" id="searchCapacity" name="capacity">
                                 <option value="">Semua kapasitas</option>
                                 <option value="small">1–10 orang</option>
                                 <option value="medium">11–30 orang</option>
                                 <option value="large">31+ orang</option>
-                            </select></label><label class="form-control"><span>Fasilitas</span><select
-                                class="form-input" name="facility">
+                            </select>
+                        </div>
+
+                        <!-- Fasilitas -->
+                        <div class="search-field">
+                            <label class="search-label" for="searchFacility">Fasilitas</label>
+                            <select class="form-input form-select search-input" id="searchFacility" name="facility">
                                 <option value="">Semua fasilitas</option>
                                 <option>WiFi</option>
                                 <option>AC</option>
                                 <option>Proyektor</option>
                                 <option>Stop Kontak</option>
-                            </select></label><button class="button" type="submit">Cari Ruang</button></form>
-                    <p class="form-status" data-form-status role="status"></p>
+                            </select>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="search-action">
+                            <button class="button btn w-100" type="submit">Cari Ruang</button>
+                        </div>
+
+                    </form>
+
+                    <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                 </div>
             </div>
         </section>
+
+        <!-- ===================================================
+             ABOUT / BENEFIT SECTION
+        =================================================== -->
         <section class="landing-section" id="about">
             <div class="landing-container">
+
                 <div class="section-intro">
                     <p class="eyebrow">KENAPA FIND STUDY SPACE?</p>
                     <h2 class="section-heading">Lebih mudah menemukan tempat produktif.</h2>
                     <p>Informasi yang jelas untuk membantu kamu memilih ruang belajar yang tepat.</p>
                 </div>
-                <div class="benefit-grid">
-                    <article class="benefit"><span class="benefit__icon"><svg class="icon" viewBox="0 0 24 24">
-                                <path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z" />
-                                <circle cx="12" cy="10" r="2" />
-                            </svg></span>
-                        <h3>Lokasi Strategis</h3>
-                        <p>Temukan ruang berdasarkan gedung dan area kampus dengan mudah.</p>
-                    </article>
-                    <article class="benefit"><span class="benefit__icon"><svg class="icon" viewBox="0 0 24 24">
-                                <path d="M4 5h16v14H4zM8 9h8M8 13h5" />
-                            </svg></span>
-                        <h3>Fasilitas Lengkap</h3>
-                        <p>Bandingkan fasilitas yang tersedia sebelum kamu datang.</p>
-                    </article>
-                    <article class="benefit"><span class="benefit__icon"><svg class="icon" viewBox="0 0 24 24">
-                                <path
-                                    d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM17 4a4 4 0 0 1 0 7M21 20v-1a4 4 0 0 0-3-3.9" />
-                            </svg></span>
-                        <h3>Informasi Kapasitas</h3>
-                        <p>Pilih ruang yang sesuai untuk fokus sendiri maupun kerja kelompok.</p>
-                    </article>
+
+                <div class="row g-4">
+
+                    <div class="col-12 col-md-4">
+                        <article class="benefit h-100">
+                            <span class="benefit__icon" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z" />
+                                    <circle cx="12" cy="10" r="2" />
+                                </svg>
+                            </span>
+                            <h3>Lokasi Strategis</h3>
+                            <p>Temukan ruang berdasarkan gedung dan area kampus dengan mudah.</p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <article class="benefit h-100">
+                            <span class="benefit__icon" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M4 5h16v14H4zM8 9h8M8 13h5" />
+                                </svg>
+                            </span>
+                            <h3>Fasilitas Lengkap</h3>
+                            <p>Bandingkan fasilitas yang tersedia sebelum kamu datang.</p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <article class="benefit h-100">
+                            <span class="benefit__icon" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM17 4a4 4 0 0 1 0 7M21 20v-1a4 4 0 0 0-3-3.9" />
+                                </svg>
+                            </span>
+                            <h3>Informasi Kapasitas</h3>
+                            <p>Pilih ruang yang sesuai untuk fokus sendiri maupun kerja kelompok.</p>
+                        </article>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+        <!-- ===================================================
+             RECOMMENDATION SECTION
+        =================================================== -->
         <section class="landing-section landing-section--muted">
             <div class="landing-container">
-                <div class="section-row">
+
+                <div class="section-row d-flex align-items-end justify-content-between mb-4">
                     <div>
                         <p class="eyebrow">REKOMENDASI UNTUKMU</p>
-                        <h2 class="section-heading">Satu kampus, banyak pilihan.</h2>
-                    </div><a class="text-link" href="pages/search.html">Lihat semua ruang</a>
+                        <h2 class="section-heading mb-0">Satu kampus, banyak pilihan.</h2>
+                    </div>
+                    <a class="text-link" href="pages/search.html">Lihat semua ruang</a>
                 </div>
+
                 <div class="recommendation-grid" data-recommendations></div>
+
             </div>
         </section>
+
+        <!-- ===================================================
+             HOW IT WORKS SECTION
+        =================================================== -->
         <section class="landing-section">
             <div class="landing-container">
+
                 <div class="section-intro">
                     <p class="eyebrow">CARA KERJA</p>
                     <h2 class="section-heading">Mulai belajar dalam tiga langkah.</h2>
                 </div>
-                <div class="steps">
-                    <article><span>01</span>
-                        <h3>Tentukan kebutuhan</h3>
-                        <p>Pilih lokasi, kapasitas, dan fasilitas yang kamu perlukan.</p>
-                    </article>
-                    <article><span>02</span>
-                        <h3>Bandingkan ruang</h3>
-                        <p>Lihat detail ruang dan temukan pilihan yang paling sesuai.</p>
-                    </article>
-                    <article><span>03</span>
-                        <h3>Datang dan mulai belajar</h3>
-                        <p>Gunakan informasi lokasi untuk menuju ruang pilihanmu.</p>
-                    </article>
+
+                <div class="steps row g-4">
+
+                    <div class="col-12 col-md-4">
+                        <article class="h-100">
+                            <span>01</span>
+                            <h3>Tentukan kebutuhan</h3>
+                            <p>Pilih lokasi, kapasitas, dan fasilitas yang kamu perlukan.</p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <article class="h-100">
+                            <span>02</span>
+                            <h3>Bandingkan ruang</h3>
+                            <p>Lihat detail ruang dan temukan pilihan yang paling sesuai.</p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <article class="h-100">
+                            <span>03</span>
+                            <h3>Datang dan mulai belajar</h3>
+                            <p>Gunakan informasi lokasi untuk menuju ruang pilihanmu.</p>
+                        </article>
+                    </div>
+
                 </div>
             </div>
         </section>
+
     </main>
+
+    <!-- ===================================================
+         FOOTER
+    =================================================== -->
     <footer class="landing-footer">
         <div class="landing-container footer-grid">
-            <div><a class="public-brand" href="index.html"><span>FS</span>Find Study <b>Space</b></a>
+            <div>
+                <a class="public-brand" href="index.html"><span>FS</span>Find Study <b>Space</b></a>
                 <p>Temukan ruang belajar ideal untuk mendukung produktivitasmu di kampus.</p>
             </div>
             <div>
-                <h3>Jelajahi</h3><a href="#search">Cari Ruang</a><a href="pages/location.html">Informasi Lokasi</a>
+                <h3>Jelajahi</h3>
+                <a href="#search">Cari Ruang</a>
+                <a href="pages/location.html">Informasi Lokasi</a>
             </div>
             <div>
-                <h3>Tentang</h3><a href="pages/login.html">Login Mahasiswa</a><a href="pages/register.html">Daftar
-                    Akun</a>
+                <h3>Tentang</h3>
+                <a href="pages/login.html">Login Mahasiswa</a>
+                <a href="pages/register.html">Daftar Akun</a>
             </div>
         </div>
         <div class="landing-container footer-bottom">© 2026 Find Study Space Kampus</div>
     </footer>
+
+    <!-- Bootstrap 5.3.8 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+    <!-- Data study spaces (global) -->
     <script src="js/data.js"></script>
+
+    <!-- Landing page logic -->
     <script type="module" src="js/landing.js"></script>
 </body>
 

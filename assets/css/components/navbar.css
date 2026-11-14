@@ -1,5 +1,100 @@
-.navbar { display: flex; min-height: 72px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 0 var(--space-8); background: var(--color-surface); }
-.navbar__left { display: flex; align-items: center; gap: var(--space-3); } .navbar__breadcrumb { color: var(--color-text-secondary); font-size: 14px; }
-.navbar__separator { color: var(--color-border); } .navbar__title { margin: 0; font-size: 18px; } .navbar__portal { color: var(--color-text-secondary); font-size: 14px; }
-.navbar__toggle { display: none; border: 0; background: none; color: var(--color-primary); font-size: 22px; }
-@media (max-width: 760px) { .navbar { padding: 0 var(--space-5); } .navbar__toggle { display: inline-flex; } }
+.app-navbar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-width: 0;
+    min-height: 68px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0 var(--space-8);
+    background: var(--color-surface);
+}
+
+.navbar__left {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.navbar__breadcrumb {
+    overflow: hidden;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar__separator {
+    flex: 0 0 auto;
+    color: var(--color-border);
+}
+
+.navbar__title {
+    flex: 0 0 auto;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.navbar__portal {
+    flex: 0 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+}
+
+.navbar__toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-text-primary);
+    cursor: pointer;
+}
+
+.navbar__toggle:hover {
+    background: var(--color-background);
+}
+
+.auth-dark .app-navbar {
+    background: #193553;
+    border-color: #315270;
+}
+
+@media (max-width: 767.98px) {
+    .app-navbar {
+        padding: 0 var(--space-5);
+    }
+
+    .app-navbar.is-sidebar-open {
+        z-index: auto;
+    }
+
+    .app-navbar.is-sidebar-open .navbar__toggle {
+        position: relative;
+        z-index: 11;
+    }
+
+    .navbar__toggle {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar__portal {
+        display: none;
+    }
+
+    .navbar__left {
+        gap: var(--space-2);
+    }
+}

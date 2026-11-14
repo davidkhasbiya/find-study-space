@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Daftar | Find Study Space</title>
+
+    <script src="../assets/js/theme.js"></script>
+
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Custom project CSS -->
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/auth.css">
     <link rel="stylesheet" href="../assets/css/register.css">
@@ -12,57 +20,128 @@
 
 <body class="auth-page register-page">
     <main class="auth-layout">
-        <section class="auth-visual"><a class="auth-brand" href="../index.html"><span>FS</span>Find Study
-                <b>Space</b></a>
+
+        <!-- ===== Panel Kiri: Visual ===== -->
+        <section class="auth-visual">
+            <a class="auth-brand" href="../index.html">
+                <span>FS</span>Find Study <b>Space</b>
+            </a>
+
             <div class="auth-visual__copy">
                 <p class="eyebrow">STUDY SPACE KAMPUS</p>
                 <h1>Ruang yang tepat.<br><span>Potensi tanpa batas.</span></h1>
                 <p>Daftar dan temukan ruang belajar nyaman yang mendukung perjalanan akademikmu.</p>
             </div>
-            <div class="auth-visual__footer"><span>Temukan ruang. Mulai berkembang.</span><span>01 / 03</span></div>
+
+            <div class="auth-visual__footer">
+                <span>Temukan ruang. Mulai berkembang.</span>
+                <span>01 / 03</span>
+            </div>
         </section>
+
+        <!-- ===== Panel Kanan: Form Register ===== -->
         <section class="auth-panel">
-            <div class="auth-card"><a class="auth-back" href="../index.html"><svg class="icon" viewBox="0 0 24 24">
+            <div class="auth-card">
+
+                <!-- Tombol Kembali -->
+                <a class="auth-back" href="../index.html">
+                    <svg class="icon" viewBox="0 0 24 24">
                         <path d="M19 12H5M11 18l-6-6 6-6" />
-                    </svg>Kembali ke beranda</a>
+                    </svg>
+                    Kembali ke beranda
+                </a>
+
+                <!-- Heading -->
                 <div class="auth-heading">
                     <p class="eyebrow">BUAT AKUN</p>
                     <h2>Daftar sebagai mahasiswa</h2>
                     <p>Lengkapi data untuk mulai menemukan study space.</p>
                 </div>
+
+                <!-- Form Register -->
                 <form id="registerForm" novalidate>
-                    <div class="auth-field"><label for="fullName">Nama mahasiswa</label><input class="form-input"
-                            id="fullName" type="text" placeholder="Nama lengkap"><span class="field-error"
-                            id="fullNameError"></span></div>
-                    <div class="auth-field"><label for="registerEmail">Email universitas</label><input
-                            class="form-input" id="registerEmail" type="email" placeholder="nama@kampus.ac.id"><span
-                            class="field-error" id="registerEmailError"></span></div>
-                    <div class="auth-field"><label for="registerPassword">Kata sandi</label>
-                        <div class="password-field"><input class="form-input" id="registerPassword" type="password"
-                                placeholder="Minimal 8 karakter"><button class="password-toggle" type="button"
-                                data-target="registerPassword" aria-label="Tampilkan kata sandi"><svg class="icon"
-                                    viewBox="0 0 24 24">
+
+                    <!-- Field Nama -->
+                    <div class="auth-field">
+                        <label for="fullName" class="form-label">Nama mahasiswa</label>
+                        <input class="form-input form-control" id="fullName" type="text" placeholder="Nama lengkap"
+                            autocomplete="name" aria-describedby="fullNameError" aria-invalid="false">
+                        <span class="field-error" id="fullNameError" role="alert"></span>
+                    </div>
+
+                    <!-- Field Email -->
+                    <div class="auth-field">
+                        <label for="registerEmail" class="form-label">Email universitas</label>
+                        <input class="form-input form-control" id="registerEmail" type="email"
+                            placeholder="nama@kampus.ac.id" autocomplete="email" aria-describedby="registerEmailError"
+                            aria-invalid="false">
+                        <span class="field-error" id="registerEmailError" role="alert"></span>
+                    </div>
+
+                    <!-- Field Password -->
+                    <div class="auth-field">
+                        <label for="registerPassword" class="form-label">Kata sandi</label>
+                        <div class="password-field">
+                            <input class="form-input form-control" id="registerPassword" type="password"
+                                placeholder="Minimal 8 karakter" autocomplete="new-password"
+                                aria-describedby="registerPasswordError" aria-invalid="false">
+                            <button class="password-toggle" type="button" data-target="registerPassword"
+                                aria-label="Tampilkan kata sandi">
+                                <svg class="icon" viewBox="0 0 24 24" id="eyeIconPassword">
                                     <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
                                     <circle cx="12" cy="12" r="2.5" />
-                                </svg></button></div><span class="field-error" id="registerPasswordError"></span>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="field-error" id="registerPasswordError" role="alert"></span>
                     </div>
-                    <div class="auth-field"><label for="confirmPassword">Konfirmasi kata sandi</label>
-                        <div class="password-field"><input class="form-input" id="confirmPassword" type="password"
-                                placeholder="Ulangi kata sandi"><button class="password-toggle" type="button"
-                                data-target="confirmPassword" aria-label="Tampilkan kata sandi"><svg class="icon"
-                                    viewBox="0 0 24 24">
+
+                    <!-- Field Konfirmasi Password -->
+                    <div class="auth-field">
+                        <label for="confirmPassword" class="form-label">Konfirmasi kata sandi</label>
+                        <div class="password-field">
+                            <input class="form-input form-control" id="confirmPassword" type="password"
+                                placeholder="Ulangi kata sandi" autocomplete="new-password"
+                                aria-describedby="confirmPasswordError" aria-invalid="false">
+                            <button class="password-toggle" type="button" data-target="confirmPassword"
+                                aria-label="Tampilkan kata sandi">
+                                <svg class="icon" viewBox="0 0 24 24" id="eyeIconConfirm">
                                     <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
                                     <circle cx="12" cy="12" r="2.5" />
-                                </svg></button></div><span class="field-error" id="confirmPasswordError"></span>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="field-error" id="confirmPasswordError" role="alert"></span>
                     </div>
-                    <p class="auth-status" id="registerStatus" role="status"></p><button class="button auth-submit"
-                        type="submit">Daftar</button>
+
+                    <!-- Status Register -->
+                    <p class="auth-status" id="registerStatus" role="status" aria-live="polite"></p>
+
+                    <!-- Tombol Submit -->
+                    <button class="btn button auth-submit w-100" type="submit">
+                        Daftar
+                    </button>
+
                 </form>
-                <p class="auth-switch">Sudah punya akun? <a href="login.html">Login</a></p>
+
+                <!-- Link Login -->
+                <p class="auth-switch mt-4 text-center">
+                    Sudah punya akun? <a href="login.html">Login</a>
+                </p>
+
             </div>
+
             <p class="auth-copyright">© 2026 Find Study Space Kampus</p>
         </section>
+
     </main>
+
+    <!-- Bootstrap 5.3.8 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+    <!-- Register logic -->
     <script src="../js/register.js"></script>
 </body>
 

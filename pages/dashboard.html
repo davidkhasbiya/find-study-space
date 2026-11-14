@@ -1,1 +1,104 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Dashboard Find Study Space Kampus"><title>Beranda | Find Study Space</title><link rel="stylesheet" href="../assets/css/global.css"><link rel="stylesheet" href="../assets/css/components/sidebar.css"><link rel="stylesheet" href="../assets/css/components/navbar.css"><link rel="stylesheet" href="../assets/css/dashboard.css"></head><body><main class="main-content"><div class="dashboard-content"><section class="dashboard-welcome"><p class="eyebrow">BERANDA</p><h2>Selamat datang, teman belajar</h2><p>Temukan tempat yang pas untuk fokus dan mewujudkan ide hari ini.</p></section><section class="dashboard-search-panel"><p class="eyebrow">TEMUKAN RUANGMU</p><h2 class="section-heading">Mau belajar di mana hari ini?</h2><p class="supporting-text">Atur kebutuhanmu, lalu temukan ruang yang sesuai.</p><form class="dashboard-search" id="dashboardSearchForm"><label class="dashboard-field"><span>Lokasi</span><input class="form-input" name="location" type="search" placeholder="Gedung atau area kampus"></label><label class="dashboard-field"><span>Kapasitas</span><select class="form-input" name="capacity"><option value="">Semua kapasitas</option><option value="small">1–10 orang</option><option value="medium">11–30 orang</option><option value="large">31+ orang</option></select></label><label class="dashboard-field"><span>Fasilitas</span><select class="form-input" name="facility"><option value="">Semua fasilitas</option><option>WiFi</option><option>AC</option><option>Proyektor</option><option>Stop Kontak</option></select></label><button class="button" type="submit">Cari Study Space</button></form></section><section class="dashboard-section"><div class="dashboard-section__heading"><div><p class="eyebrow">PILIHAN UNTUKMU</p><h2 class="section-heading">Rekomendasi untukmu</h2><p class="supporting-text">Pilihan ruang untuk berbagai cara belajar.</p></div><a class="dashboard-link" href="search.html">Lihat semua ruang</a></div><div class="dashboard-cards" id="dashboardRecommendations"></div></section><section class="dashboard-info-grid"><article><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18M5 8a7 7 0 0 1 14 0"/></svg><div><h2 class="section-heading">Beda aktivitas, beda ruang.</h2><p class="supporting-text">Ruang tenang untuk fokus, ruang kolaboratif untuk bertukar ide, dan pilihan yang fleksibel untuk kebutuhanmu.</p></div></article><article><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><h2 class="section-heading">Datang langsung, mulai belajar.</h2><p class="supporting-text">Gunakan detail lokasi dan fasilitas untuk mempersiapkan kunjunganmu ke study space pilihan.</p></div></article></section></div></main><script src="../js/data.js"></script><script type="module" src="../js/dashboard.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Dashboard Find Study Space Kampus">
+    <title>Beranda | Find Study Space</title>
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="dashboard-content">
+            <section class="dashboard-welcome" aria-labelledby="dashboardWelcomeTitle">
+                <p class="eyebrow">BERANDA</p>
+                <h2 id="dashboardWelcomeTitle">Selamat datang, teman belajar</h2>
+                <p class="supporting-text">Temukan tempat yang pas untuk fokus dan mewujudkan ide hari ini.</p>
+            </section>
+            <section class="dashboard-search-panel" aria-labelledby="dashboardSearchTitle">
+                <p class="eyebrow">TEMUKAN RUANGMU</p>
+                <h2 class="section-heading" id="dashboardSearchTitle">Mau belajar di mana hari ini?</h2>
+                <p class="supporting-text">Atur kebutuhanmu, lalu temukan ruang yang sesuai.</p>
+                <form class="dashboard-search row g-3 align-items-end" id="dashboardSearchForm">
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <label class="dashboard-field"><span>Lokasi</span><input class="form-control form-input"
+                                name="location" type="search" placeholder="Gedung atau area kampus"></label>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <label class="dashboard-field"><span>Kapasitas</span><select class="form-select"
+                                name="capacity">
+                                <option value="">Semua kapasitas</option>
+                                <option value="small">1–10 orang</option>
+                                <option value="medium">11–30 orang</option>
+                                <option value="large">31+ orang</option>
+                            </select></label>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <label class="dashboard-field"><span>Fasilitas</span><select class="form-select"
+                                name="facility">
+                                <option value="">Semua fasilitas</option>
+                                <option>WiFi</option>
+                                <option>AC</option>
+                                <option>Proyektor</option>
+                                <option>Stop Kontak</option>
+                            </select></label>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-2">
+                        <button class="button btn w-100" type="submit">Cari Study Space</button>
+                    </div>
+                </form>
+            </section>
+            <section class="dashboard-section">
+                <div class="dashboard-section__heading">
+                    <div>
+                        <p class="eyebrow">PILIHAN UNTUKMU</p>
+                        <h2 class="section-heading">Rekomendasi untukmu</h2>
+                        <p class="supporting-text">Pilihan ruang untuk berbagai cara belajar.</p>
+                    </div><a class="dashboard-link" href="search.html">Lihat semua ruang</a>
+                </div>
+                <div class="dashboard-cards row g-4" id="dashboardRecommendations"></div>
+            </section>
+            <section class="dashboard-info-grid row g-3" aria-label="Informasi study space">
+                <div class="col-12 col-md-6">
+                    <article><svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 3v18M5 8a7 7 0 0 1 14 0" />
+                        </svg>
+                        <div>
+                            <h2 class="section-heading">Beda aktivitas, beda ruang.</h2>
+                            <p class="supporting-text">Ruang tenang untuk fokus, ruang kolaboratif untuk bertukar ide,
+                                dan
+                                pilihan yang fleksibel untuk kebutuhanmu.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <article><svg class="icon" viewBox="0 0 24 24">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                        <div>
+                            <h2 class="section-heading">Datang langsung, mulai belajar.</h2>
+                            <p class="supporting-text">Gunakan detail lokasi dan fasilitas untuk mempersiapkan
+                                kunjunganmu
+                                ke study space pilihan.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="../js/data.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,159 +1,271 @@
 # Find Study Space Kampus
 
+Website frontend untuk membantu mahasiswa menemukan ruang belajar kampus berdasarkan lokasi, kapasitas, fasilitas, dan kebutuhan aktivitas.
+
 ## A. Project Overview
 
-Find Study Space Kampus adalah website frontend untuk membantu mahasiswa menemukan ruang belajar yang sesuai dengan lokasi, kapasitas, fasilitas, dan kebutuhan aktivitas mereka.
+**Find Study Space Kampus** merupakan proyek website yang dirancang untuk memudahkan mahasiswa dalam mencari informasi ruang belajar di lingkungan kampus.
 
-Project ini ditujukan untuk mahasiswa yang membutuhkan informasi ruang belajar kampus secara lebih terstruktur. Permasalahan yang ingin diselesaikan adalah sulitnya menemukan ruang yang nyaman, mengetahui fasilitas yang tersedia, serta memahami lokasi ruang di lingkungan kampus.
+Mahasiswa dapat melihat informasi ruang, membandingkan fasilitas, mencari lokasi gedung, dan menemukan ruang belajar yang sesuai dengan kebutuhan mereka.
 
-Seluruh data pada project ini masih berupa data dummy dan belum terhubung ke backend.
+Proyek ini dikembangkan sebagai aplikasi frontend menggunakan HTML, CSS, JavaScript, dan Bootstrap. Data ruang belajar yang digunakan masih berupa data dummy dan belum terhubung dengan backend atau database.
 
 **Preview**
+<<<<<<< HEAD
+=======
 <img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
 
 ## B. Features
+>>>>>>> origin/main
 
-- Landing Page dengan CTA dan pencarian awal.
-- Login dan Register dengan validasi frontend.
-- Dashboard mahasiswa.
-- Pencarian study space.
-- Hasil pencarian dengan filter, sorting, dan pagination.
-- Detail study space berdasarkan query parameter ID.
-- Informasi lokasi gedung dan denah kampus berbasis SVG.
-- Pengaturan profil dan preferensi akun.
-- Light/Dark Theme pada halaman Pengaturan.
+<img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
+
+## B. Main Features
+
+### 1. Landing Page
+- Halaman utama sebagai pengenalan aplikasi.
+- Navigasi menuju halaman pencarian dan fitur lainnya.
+- Pencarian awal berdasarkan kriteria ruang belajar.
+- Rekomendasi study space.
+
+### 2. Authentication
+- Halaman Login dan Register.
+- Validasi input menggunakan JavaScript.
+- Toggle visibilitas password.
+- Tampilan responsif.
+
+*Catatan: Login dan Register masih berupa simulasi frontend, belum menggunakan autentikasi backend.*
+
+### 3. Dashboard
+- Ringkasan informasi study space.
+- Rekomendasi ruang belajar.
+- Navigasi menuju fitur utama aplikasi.
+
+### 4. Study Space Search
+- Pencarian berdasarkan nama atau kriteria ruang.
+- Filter kapasitas ruang.
+- Filter fasilitas.
+- Sorting hasil pencarian.
+- Pagination.
+
+### 5. Study Space Detail
+- Informasi detail ruang belajar.
+- Informasi kapasitas dan fasilitas.
+- Informasi berdasarkan ID ruang melalui query parameter.
+
+### 6. Location Information
+- Informasi gedung kampus.
+- Denah lokasi berbasis SVG.
+- Informasi ruang berdasarkan gedung.
+
+### 7. Settings
+- Pengaturan profil.
+- Pengaturan Light Mode dan Dark Mode.
 - Preferensi notifikasi.
-- Responsive layout untuk desktop, tablet, dan mobile.
+- Pengaturan preferensi akun.
 
-Login dan Register hanya merupakan simulasi frontend. Tidak ada autentikasi backend.
+### 8. Responsive Interface
+- Layout desktop, tablet, dan mobile.
+- Sidebar yang dapat disesuaikan pada desktop dan tablet.
+- Navigasi mobile menggunakan drawer.
+- Komponen antarmuka yang digunakan bersama.
 
 ## C. Technology Stack
 
-- HTML5 untuk struktur halaman.
-- CSS3 untuk design system, layout, dan responsive styling.
-- Vanilla JavaScript ES Modules untuk komponen dan interaksi.
-- SVG untuk icon outline dan denah lokasi.
-- `localStorage` untuk menyimpan preferensi tema dan notifikasi.
-- Live Server untuk menjalankan project secara lokal.
+| Teknologi | Penggunaan |
+|---|---|
+| HTML5 | Struktur halaman website |
+| CSS3 | Styling, layout, dan responsive design |
+| JavaScript ES Modules | Interaksi dan logika frontend |
+| Bootstrap 5.3.8 | Framework CSS dan komponen antarmuka |
+| SVG | Ikon dan denah lokasi |
+| localStorage | Penyimpanan preferensi pengguna |
+| Live Server | Menjalankan aplikasi secara lokal |
 
-Project tidak memerlukan `npm install` atau framework frontend.
+Proyek ini tidak memerlukan proses instalasi dependency menggunakan `npm install`.
 
 ## D. Project Structure
 
 ```text
 find-study-space/
-├── index.html
-├── pages/
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── search.html
-│   ├── results.html
-│   ├── detail.html
-│   ├── location.html
-│   ├── settings.html
-│   ├── directions.html
-│   ├── foundation.html
-│   └── components-preview.html
-├── assets/
-│   ├── css/
-│   │   ├── global.css
-│   │   ├── auth.css
-│   │   ├── dashboard.css
-│   │   ├── detail.css
-│   │   ├── landing.css
-│   │   ├── location.css
-│   │   ├── login.css
-│   │   ├── register.css
-│   │   ├── results.css
-│   │   ├── search.css
-│   │   ├── settings.css
-│   │   └── components/
-│   │       ├── sidebar.css
-│   │       └── navbar.css
-│   └── js/
-│       └── components/
-│           ├── sidebar.js
-│           └── navbar.js
-├── js/
-│   ├── components.js
-│   ├── study-spaces.js
-│   ├── landing.js
-│   ├── login.js
-│   ├── register.js
-│   ├── dashboard.js
-│   ├── search.js
-│   ├── results.js
-│   ├── detail.js
-│   ├── location.js
-│   └── settings.js
-├── components/
-├── css/
-├── assets/images/
-├── .gitignore
-└── README.md
+â”œâ”€â”€ index.html
+â”œâ”€â”€ pages/
+â”‚   â”œâ”€â”€ login.html
+â”‚   â”œâ”€â”€ register.html
+â”‚   â”œâ”€â”€ dashboard.html
+â”‚   â”œâ”€â”€ search.html
+â”‚   â”œâ”€â”€ results.html
+â”‚   â”œâ”€â”€ detail.html
+â”‚   â”œâ”€â”€ location.html
+â”‚   â”œâ”€â”€ settings.html
+â”‚   â”œâ”€â”€ directions.html
+â”‚   â”œâ”€â”€ foundation.html
+â”‚   â””â”€â”€ components-preview.html
+â”œâ”€â”€ assets/
+â”‚   â”œâ”€â”€ css/
+â”‚   â”‚   â”œâ”€â”€ global.css
+â”‚   â”‚   â”œâ”€â”€ auth.css
+â”‚   â”‚   â”œâ”€â”€ dashboard.css
+â”‚   â”‚   â”œâ”€â”€ detail.css
+â”‚   â”‚   â”œâ”€â”€ landing.css
+â”‚   â”‚   â”œâ”€â”€ location.css
+â”‚   â”‚   â”œâ”€â”€ login.css
+â”‚   â”‚   â”œâ”€â”€ register.css
+â”‚   â”‚   â”œâ”€â”€ results.css
+â”‚   â”‚   â”œâ”€â”€ search.css
+â”‚   â”‚   â”œâ”€â”€ settings.css
+â”‚   â”‚   â””â”€â”€ components/
+â”‚   â”‚       â”œâ”€â”€ navbar.css
+â”‚   â”‚       â””â”€â”€ sidebar.css
+â”‚   â”œâ”€â”€ js/
+â”‚   â”‚   â”œâ”€â”€ theme.js
+â”‚   â”‚   â””â”€â”€ components/
+â”‚   â”‚       â”œâ”€â”€ navbar.js
+â”‚   â”‚       â””â”€â”€ sidebar.js
+â”‚   â””â”€â”€ images/
+â”œâ”€â”€ js/
+â”‚   â”œâ”€â”€ components.js
+â”‚   â”œâ”€â”€ data.js
+â”‚   â”œâ”€â”€ study-spaces.js
+â”‚   â”œâ”€â”€ landing.js
+â”‚   â”œâ”€â”€ login.js
+â”‚   â”œâ”€â”€ register.js
+â”‚   â”œâ”€â”€ dashboard.js
+â”‚   â”œâ”€â”€ search.js
+â”‚   â”œâ”€â”€ results.js
+â”‚   â”œâ”€â”€ detail.js
+â”‚   â”œâ”€â”€ location.js
+â”‚   â”œâ”€â”€ settings.js
+â”‚   â”œâ”€â”€ directions.js
+â”‚   â”œâ”€â”€ foundation-demo.js
+â”‚   â”œâ”€â”€ script.js
+â”‚   â””â”€â”€ sidebar.js
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ navbar.html
+â”‚   â””â”€â”€ sidebar.html
+â”œâ”€â”€ css/
+â”‚   â””â”€â”€ (Legacy stylesheets)
+â”œâ”€â”€ .gitignore
+â””â”€â”€ README.md
 ```
 
-Folder `components/` dan `css/` lama masih dipertahankan karena berisi implementasi legacy atau referensi migrasi halaman yang belum seluruhnya dipindahkan.
+**Keterangan:**
+- `assets/css/` berisi stylesheet utama yang digunakan oleh halaman aktif.
+- `assets/js/` berisi JavaScript untuk tema dan komponen navigasi bersama.
+- `js/` berisi logika halaman, pengelolaan data, dan interaksi aplikasi.
+- `components/` dan `css/` masih menyimpan file legacy atau referensi dari pengembangan sebelumnya.
+- `pages/` berisi halaman-halaman aplikasi.
 
 ## E. Installation & Running
+
+### Requirements
+- Git
+- Visual Studio Code
+- Browser modern
+- Extension Live Server pada Visual Studio Code
+
+### Steps
 
 1. Clone repository:
 
    ```bash
-   https://github.com/davidkhasbiya/find-study-space.git
+   git clone https://github.com/davidkhasbiya/find-study-space.git
+
    ```
 
-2. Buka folder `find-study-space` di VS Code.
-3. Install extension Live Server jika belum tersedia.
-4. Klik kanan `index.html`, lalu pilih **Open with Live Server**.
-5. Website akan terbuka pada URL lokal seperti:
+2. Masuk ke direktori proyek:
+
+   ```bash
+   cd find-study-space
+   ```
+
+3. Buka folder proyek menggunakan Visual Studio Code.
+
+4. Pastikan extension Live Server sudah terpasang.
+
+5. Klik kanan `index.html`, kemudian pilih **Open with Live Server**.
+
+6. Website akan terbuka melalui alamat lokal, contohnya:
 
    ```text
    http://127.0.0.1:5500/index.html
    ```
 
-Port dapat berbeda tergantung konfigurasi Live Server.
+Port dapat berbeda sesuai konfigurasi Live Server.
 
 ## F. Application Pages
 
 | Halaman | Path | Deskripsi |
-| --- | --- | --- |
-| Landing Page | `/index.html` | Halaman publik dan pencarian awal. |
-| Login | `/pages/login.html` | Simulasi login mahasiswa dengan validasi frontend. |
+|---|---|---|
+| Landing Page | `/index.html` | Halaman utama dan pencarian awal. |
+| Login | `/pages/login.html` | Simulasi login dengan validasi frontend. |
 | Register | `/pages/register.html` | Simulasi pendaftaran akun. |
 | Dashboard | `/pages/dashboard.html` | Ringkasan dan rekomendasi study space. |
-| Cari Study Space | `/pages/search.html` | Form pencarian berdasarkan kriteria. |
-| Hasil Pencarian | `/pages/results.html` | Daftar hasil dengan filter, sorting, dan pagination. |
-| Detail Study Space | `/pages/detail.html?id=perpustakaan-pusat` | Informasi lengkap satu study space. |
-| Informasi Lokasi | `/pages/location.html` | Informasi gedung, denah SVG, dan ruang di dalamnya. |
-| Pengaturan | `/pages/settings.html` | Profil, tema, notifikasi, dan simulasi keamanan akun. |
+| Search | `/pages/search.html` | Form pencarian ruang belajar. |
+| Results | `/pages/results.html` | Hasil pencarian, filter, sorting, dan pagination. |
+| Detail | `/pages/detail.html?id=<space-id>` | Informasi detail ruang belajar. |
+| Location | `/pages/location.html` | Informasi gedung dan denah kampus. |
+| Settings | `/pages/settings.html` | Pengaturan profil, tema, dan preferensi. |
 
-## G. Data & Limitations
+## G. Data Management & Limitations
 
-- Data study space berasal dari dummy data di `js/study-spaces.js`.
-- Login dan Register belum menggunakan autentikasi backend.
-- Password tidak pernah disimpan ke `localStorage`.
-- Tema dan preferensi notifikasi disimpan menggunakan `localStorage`.
-- Denah lokasi dibuat dengan SVG tanpa API eksternal.
-- Belum tersedia database, reservasi ruang, atau sinkronisasi ketersediaan real-time.
-- Browser testing masih perlu dilakukan secara manual melalui Live Server.
+- Data study space dikelola melalui file JavaScript lokal, terutama `js/study-spaces.js`.
+- Aplikasi belum terhubung ke backend maupun database.
+- Login dan Register belum menggunakan autentikasi sungguhan.
+- Password tidak disimpan ke `localStorage`.
+- Preferensi tema dan pengaturan pengguna disimpan melalui `localStorage`.
+- Denah lokasi dibuat menggunakan SVG dan belum menggunakan layanan peta eksternal.
+- Belum tersedia fitur reservasi ruang.
+- Belum tersedia sinkronisasi ketersediaan ruang secara real-time.
 
-## H. Testing
+## H. Testing & Quality Assurance
 
-Static validation dilakukan menggunakan `node --check` pada seluruh file JavaScript yang digunakan project. Hasil validasi terakhir: seluruh JavaScript lulus syntax validation.
+Pengujian dilakukan melalui pemeriksaan kode dan browser.
 
-Integration review Phase 10 mencakup pemeriksaan path, komponen global, shared data, navigasi, query parameter, form validation, reset, theme switching, dan localStorage.
+### 1. Static Validation
+- Pemeriksaan sintaks JavaScript menggunakan `node --check`.
+- Pemeriksaan perubahan kode menggunakan `git diff --check`.
+- Pemeriksaan struktur dan referensi file.
 
-Browser automation belum tersedia pada lingkungan pengembangan ini. Karena itu, pengujian visual, console browser, dan responsive viewport tetap perlu dilakukan manual melalui Live Server pada ukuran desktop, tablet, dan mobile.
+### 2. Browser Testing
+Pemeriksaan browser mencakup:
+- Sembilan halaman aktif.
+- Light Mode dan Dark Mode.
+- Responsivitas desktop, tablet, dan mobile.
+- Navigasi antarhalaman.
+- Query parameter pencarian dan detail.
+- Validasi form Login dan Register.
+- Filter kapasitas dan fasilitas.
+- Sorting dan pagination.
+- Penyimpanan preferensi tema.
+- Pengaturan ulang preferensi melalui Settings.
+- Navigasi sidebar dan navbar.
+
+### 3. Known QA Findings
+
+Pemeriksaan kualitas sebelumnya masih menemukan beberapa hal yang perlu ditindaklanjuti, terutama:
+- Konsistensi kontras teks pada beberapa halaman.
+- Indikator keyboard focus pada sejumlah elemen interaktif.
+- Beberapa detail aksesibilitas pada komponen form dan tombol.
+
+Karena itu, pengujian akhir dan perbaikan aksesibilitas masih menjadi bagian dari tahap finalisasi proyek.
 
 ## I. Future Development
 
-Rencana pengembangan berikut belum tersedia pada versi ini:
+Pengembangan berikut dapat dilakukan pada tahap selanjutnya:
 
-- Integrasi backend.
-- Autentikasi pengguna yang sebenarnya.
-- Database study space.
-- Reservasi study space.
+- Integrasi backend dan database.
+- Implementasi autentikasi pengguna.
+- Pengelolaan data study space secara dinamis.
+- Fitur reservasi ruang belajar.
+- Informasi ketersediaan ruang secara real-time.
 - Integrasi peta kampus.
 - Automated browser testing.
+- Peningkatan aksesibilitas antarmuka.
+
+---
+
+**Project:** Find Study Space Kampus
+**Category:** Web Development / Frontend
+**Status:** Frontend Development
+**Development Stack:** HTML, CSS, JavaScript, Bootstrap 5.3.8
