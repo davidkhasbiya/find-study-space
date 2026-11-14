@@ -1,1 +1,76 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Hasil pencarian study space"><title>Hasil Pencarian | Find Study Space</title><link rel="stylesheet" href="../assets/css/global.css"><link rel="stylesheet" href="../assets/css/components/sidebar.css"><link rel="stylesheet" href="../assets/css/components/navbar.css"><link rel="stylesheet" href="../assets/css/results.css"></head><body><main class="main-content"><div class="results-content"><header class="results-header"><p class="eyebrow">EKSPLORASI KAMPUS</p><h2>Hasil Pencarian Study Space</h2><p>Temukan ruang belajar yang sesuai dengan kebutuhanmu.</p></header><section class="results-filter"><form id="resultsFilterForm"><label>Nama study space<input class="form-input" name="name" type="search" placeholder="Cari nama ruang"></label><label>Lokasi / gedung<select class="form-input" name="location"><option value="">Semua gedung</option><option value="Perpustakaan Pusat">Perpustakaan Pusat</option><option value="Gedung Fakultas">Gedung Fakultas</option><option value="Student Center">Student Center</option></select></label><label>Kapasitas minimum<select class="form-input" name="capacity"><option value="">Semua kapasitas</option><option value="1">1+ orang</option><option value="5">5+ orang</option><option value="11">11+ orang</option><option value="21">21+ orang</option></select></label><label>Fasilitas<select class="form-input" name="facility"><option value="">Semua fasilitas</option><option value="WiFi">Wi-Fi</option><option value="AC">AC</option><option value="Stop Kontak">Stop Kontak</option><option value="Whiteboard">Whiteboard</option></select></label><div class="filter-actions"><button class="button" type="submit">Cari</button><button class="button button--secondary" id="resetResults" type="button">Reset</button></div></form></section><section class="results-toolbar"><div><strong id="resultCount">0 study space ditemukan</strong><div class="active-filters" id="activeFilters"></div></div><label class="sort-label">Urutkan <select class="form-input" id="sortResults"><option value="relevance">Relevansi</option><option value="name">Nama A-Z</option><option value="capacity-low">Kapasitas terkecil</option><option value="capacity-high">Kapasitas terbesar</option></select></label></section><section class="results-grid" id="resultsGrid"></section><section class="empty-state" id="emptyState" hidden><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><h2>Tidak ada study space yang sesuai.</h2><p>Coba ubah kata kunci atau hapus beberapa filter pencarian.</p><button class="button" id="emptyReset" type="button">Atur ulang pencarian</button></section><nav class="pagination" id="pagination" aria-label="Pagination"></nav></div></main><script type="module" src="../js/results.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Hasil pencarian study space">
+    <title>Hasil Pencarian | Find Study Space</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../assets/css/results.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="results-content">
+            <header class="results-header">
+                <p class="eyebrow">EKSPLORASI KAMPUS</p>
+                <h2>Hasil Pencarian Study Space</h2>
+                <p>Temukan ruang belajar yang sesuai dengan kebutuhanmu.</p>
+            </header>
+            <section class="results-filter">
+                <form id="resultsFilterForm"><label>Nama study space<input class="form-input" name="name" type="search"
+                            placeholder="Cari nama ruang"></label><label>Lokasi / gedung<select class="form-input"
+                            name="location">
+                            <option value="">Semua gedung</option>
+                            <option value="Perpustakaan Pusat">Perpustakaan Pusat</option>
+                            <option value="Gedung Fakultas">Gedung Fakultas</option>
+                            <option value="Student Center">Student Center</option>
+                            <option value="Gedung Teknik">Gedung Teknik</option>
+                        </select></label><label>Kapasitas minimum<select class="form-input" name="capacity">
+                            <option value="">Semua kapasitas</option>
+                            <option value="1">1+ orang</option>
+                            <option value="5">5+ orang</option>
+                            <option value="11">11+ orang</option>
+                            <option value="21">21+ orang</option>
+                        </select></label>
+                    <fieldset class="results-facility-filter">
+                        <legend>Fasilitas</legend>
+                        <label><input type="checkbox" name="facility" value="WiFi"> Wi-Fi</label>
+                        <label><input type="checkbox" name="facility" value="AC"> AC</label>
+                        <label><input type="checkbox" name="facility" value="Stop Kontak"> Stop Kontak</label>
+                        <label><input type="checkbox" name="facility" value="Whiteboard"> Papan Tulis</label>
+                        <label><input type="checkbox" name="facility" value="Sofa"> Sofa</label>
+                    </fieldset>
+                    <div class="filter-actions"><button class="button" type="submit">Cari</button><button
+                            class="button button--secondary" id="resetResults" type="button">Reset</button></div>
+                </form>
+            </section>
+            <section class="results-toolbar">
+                <div><strong id="resultCount">0 study space ditemukan</strong>
+                    <div class="active-filters" id="activeFilters"></div>
+                </div><label class="sort-label">Urutkan <select class="form-input" id="sortResults">
+                        <option value="relevance">Urutan default</option>
+                        <option value="name">Nama A-Z</option>
+                        <option value="capacity-low">Kapasitas terkecil</option>
+                        <option value="capacity-high">Kapasitas terbesar</option>
+                    </select></label>
+            </section>
+            <section class="results-grid" id="resultsGrid"></section>
+            <section class="empty-state" id="emptyState" hidden><svg class="icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="6" />
+                    <path d="m16 16 4 4" />
+                </svg>
+                <h2>Tidak ada study space yang sesuai.</h2>
+                <p>Coba ubah kata kunci atau hapus beberapa filter pencarian.</p><button class="button" id="emptyReset"
+                    type="button">Atur ulang pencarian</button>
+            </section>
+            <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+        </div>
+    </main>
+    <script type="module" src="../js/results.js"></script>
+</body>
+
+</html>

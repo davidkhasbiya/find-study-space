@@ -1,1 +1,95 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Informasi lokasi study space"><title>Informasi Lokasi | Find Study Space</title><link rel="stylesheet" href="../assets/css/global.css"><link rel="stylesheet" href="../assets/css/components/sidebar.css"><link rel="stylesheet" href="../assets/css/components/navbar.css"><link rel="stylesheet" href="../assets/css/location.css"></head><body><main class="main-content"><div class="location-content"><header class="location-header"><div><p class="eyebrow">EKSPLORE KAMPUS</p><h2>Informasi Lokasi</h2><p>Temukan lokasi study space dan informasi gedung di lingkungan kampus.</p></div><a class="button button--secondary" href="results.html">Kembali ke hasil</a></header><section class="location-layout"><article class="building-card"><p class="eyebrow">GEDUNG TERPILIH</p><h2 class="section-heading" id="buildingName">Perpustakaan Pusat</h2><p class="supporting-text" id="buildingDescription"></p><div class="building-facts"><div><span class="fact-label">Lokasi</span><strong id="buildingLocation"></strong></div><div><span class="fact-label">Jam operasional</span><strong id="buildingHours"></strong></div><div><span class="fact-label">Jumlah study space</span><strong id="spaceCount"></strong></div></div></article><section class="map-card" aria-label="Denah lokasi kampus"><div class="map-heading"><div><p class="eyebrow">DENAH LOKASI</p><h2 class="section-heading">Area kampus</h2></div><span class="map-legend"><i></i> Gedung study space</span></div><div class="campus-map"><svg viewBox="0 0 700 300" role="img" aria-label="Denah area kampus dengan marker gedung"><path class="map-road" d="M0 240 C140 170 170 270 300 205S520 80 700 130"/><path class="map-road map-road--thin" d="M40 40 210 260M480 0 410 300M640 20 570 280"/><rect class="map-building map-building--one" x="75" y="80" width="150" height="78" rx="8"/><rect class="map-building map-building--two" x="280" y="42" width="175" height="88" rx="8"/><rect class="map-building map-building--three" x="485" y="175" width="145" height="72" rx="8"/><circle class="map-marker" id="markerOne" cx="150" cy="80" r="10"/><circle class="map-marker" id="markerTwo" cx="365" cy="42" r="10"/><circle class="map-marker" id="markerThree" cx="555" cy="175" r="10"/></svg><div class="map-label map-label--one">Perpustakaan Pusat</div><div class="map-label map-label--two">Gedung Fakultas</div><div class="map-label map-label--three">Student Center</div></div></section></section><section class="access-card"><div class="access-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18M5 8a7 7 0 0 1 14 0"/></svg></div><div><h2 class="section-heading">Informasi akses</h2><p class="supporting-text">Gunakan jalur utama kampus menuju <strong id="accessBuilding"></strong>. Study space tersedia di <strong id="accessFloor"></strong>. Informasi akses ini bersifat ilustrasi untuk kebutuhan demo frontend.</p></div></section><section class="building-spaces"><div class="location-section-heading"><div><p class="eyebrow">RUANG DI GEDUNG INI</p><h2 class="section-heading">Study space yang tersedia</h2></div><span class="supporting-text" id="spaceCountLabel"></span></div><div class="location-grid" id="locationSpaces"></div></section><section class="location-empty" id="locationEmpty" hidden><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><h2>Lokasi tidak ditemukan</h2><p>Gedung yang dipilih belum tersedia dalam data study space.</p><a class="button" href="location.html">Lihat lokasi utama</a></section></div></main><script type="module" src="../js/location.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Informasi lokasi study space">
+    <title>Informasi Lokasi | Find Study Space</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../assets/css/location.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="location-content">
+            <header class="location-header">
+                <div>
+                    <p class="eyebrow">EKSPLORE KAMPUS</p>
+                    <h2>Informasi Lokasi</h2>
+                    <p>Temukan lokasi study space dan informasi gedung di lingkungan kampus.</p>
+                </div><a class="button button--secondary" href="results.html">Kembali ke hasil</a>
+            </header>
+            <section class="location-layout">
+                <article class="building-card">
+                    <p class="eyebrow">GEDUNG TERPILIH</p>
+                    <h2 class="section-heading" id="buildingName">Perpustakaan Pusat</h2>
+                    <p class="supporting-text" id="buildingDescription"></p>
+                    <div class="building-facts">
+                        <div><span class="fact-label">Lokasi</span><strong id="buildingLocation"></strong></div>
+                        <div><span class="fact-label">Jam operasional</span><strong id="buildingHours"></strong></div>
+                        <div><span class="fact-label">Jumlah study space</span><strong id="spaceCount"></strong></div>
+                    </div>
+                </article>
+                <section class="map-card" aria-label="Denah lokasi kampus">
+                    <div class="map-heading">
+                        <div>
+                            <p class="eyebrow">DENAH LOKASI</p>
+                            <h2 class="section-heading">Area kampus</h2>
+                        </div><span class="map-legend"><i></i> Gedung study space</span>
+                    </div>
+                    <div class="campus-map"><svg viewBox="0 0 700 300" role="img"
+                            aria-label="Denah area kampus dengan marker gedung">
+                            <path class="map-road" d="M0 240 C140 170 170 270 300 205S520 80 700 130" />
+                            <path class="map-road map-road--thin" d="M40 40 210 260M480 0 410 300M640 20 570 280" />
+                            <rect class="map-building map-building--one" x="75" y="80" width="150" height="78" rx="8" />
+                            <rect class="map-building map-building--two" x="280" y="42" width="175" height="88"
+                                rx="8" />
+                            <rect class="map-building map-building--three" x="485" y="175" width="145" height="72"
+                                rx="8" />
+                            <circle class="map-marker" id="markerOne" cx="150" cy="80" r="10" />
+                            <circle class="map-marker" id="markerTwo" cx="365" cy="42" r="10" />
+                            <circle class="map-marker" id="markerThree" cx="555" cy="175" r="10" />
+                        </svg>
+                        <div class="map-label map-label--one">Perpustakaan Pusat</div>
+                        <div class="map-label map-label--two">Gedung Fakultas</div>
+                        <div class="map-label map-label--three">Student Center</div>
+                    </div>
+                </section>
+            </section>
+            <section class="access-card">
+                <div class="access-icon"><svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 3v18M5 8a7 7 0 0 1 14 0" />
+                    </svg></div>
+                <div>
+                    <h2 class="section-heading">Informasi akses</h2>
+                    <p class="supporting-text">Gunakan jalur utama kampus menuju <strong id="accessBuilding"></strong>.
+                        Study space tersedia di <strong id="accessFloor"></strong>. Informasi akses ini bersifat
+                        ilustrasi untuk kebutuhan demo frontend.</p>
+                </div>
+            </section>
+            <section class="building-spaces">
+                <div class="location-section-heading">
+                    <div>
+                        <p class="eyebrow">RUANG DI GEDUNG INI</p>
+                        <h2 class="section-heading">Study space yang tersedia</h2>
+                    </div><span class="supporting-text" id="spaceCountLabel"></span>
+                </div>
+                <div class="location-grid" id="locationSpaces"></div>
+            </section>
+            <section class="location-empty" id="locationEmpty" hidden><svg class="icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="6" />
+                    <path d="m16 16 4 4" />
+                </svg>
+                <h2>Lokasi tidak ditemukan</h2>
+                <p>Gedung yang dipilih belum tersedia dalam data study space.</p><a class="button"
+                    href="location.html">Lihat lokasi utama</a>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="../js/location.js"></script>
+</body>
+
+</html>
