@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Pengaturan akun Find Study Space">
     <title>Pengaturan | Find Study Space</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/components/sidebar.css">
     <link rel="stylesheet" href="../assets/css/components/navbar.css">
@@ -16,124 +19,195 @@
     <main class="main-content">
         <div class="settings-content">
             <header class="settings-header">
-                <div>
-                    <p class="eyebrow">AKUN</p>
-                    <h2>Pengaturan</h2>
-                    <p>Kelola informasi profil dan preferensi akunmu.</p>
-                </div>
+                <p class="eyebrow">AKUN</p>
+                <h2>Pengaturan</h2>
+                <p>Kelola informasi profil dan preferensi akunmu.</p>
             </header>
+
             <div class="settings-layout">
-                <section class="settings-main">
-                    <article class="settings-card profile-card">
+                <section class="settings-main" aria-label="Profil dan preferensi">
+                    <article class="settings-card profile-card" aria-labelledby="profileHeading">
                         <div class="card-title">
-                            <div class="avatar-placeholder"><svg class="icon" viewBox="0 0 24 24">
+                            <div class="avatar-placeholder" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24">
                                     <circle cx="12" cy="8" r="3" />
                                     <path d="M5 20a7 7 0 0 1 14 0" />
-                                </svg></div>
+                                </svg>
+                            </div>
                             <div>
-                                <h2 class="section-heading">Pengaturan profil</h2>
+                                <h2 class="section-heading" id="profileHeading">Pengaturan profil</h2>
                                 <p class="supporting-text">Perbarui informasi dasar akunmu.</p>
                             </div>
                         </div>
+
                         <form id="profileForm" novalidate>
-                            <div class="form-grid"><label class="settings-field">Nama lengkap<input class="form-input"
-                                        id="fullName" value="Mahasiswa Kampus"><span class="field-error"
-                                        id="nameError"></span></label><label class="settings-field">Email<input
-                                        class="form-input" id="email" type="email" value="mahasiswa@kampus.ac.id"><span
-                                        class="field-error" id="emailError"></span></label><label
-                                    class="settings-field">Username<input class="form-input" id="username"
-                                        value="mahasiswa_kampus"></label><label
-                                    class="settings-field form-grid__full">Bio singkat<textarea class="form-input"
-                                        id="bio" rows="3"
-                                        placeholder="Ceritakan sedikit tentang kamu">Mahasiswa yang sedang mencari ruang nyaman untuk belajar.</textarea></label>
+                            <div class="form-grid">
+                                <label class="settings-field">
+                                    Nama lengkap
+                                    <input class="form-input" id="fullName" value="Mahasiswa Kampus">
+                                    <span class="field-error" id="nameError"></span>
+                                </label>
+                                <label class="settings-field">
+                                    Email
+                                    <input class="form-input" id="email" type="email"
+                                        value="mahasiswa@kampus.ac.id">
+                                    <span class="field-error" id="emailError"></span>
+                                </label>
+                                <label class="settings-field">
+                                    Username
+                                    <input class="form-input" id="username" value="mahasiswa_kampus">
+                                </label>
+                                <label class="settings-field form-grid__full">
+                                    Bio singkat
+                                    <textarea class="form-input" id="bio" rows="3"
+                                        placeholder="Ceritakan sedikit tentang kamu">Mahasiswa yang sedang mencari ruang nyaman untuk belajar.</textarea>
+                                </label>
                             </div>
-                            <div class="form-actions"><button class="button" type="submit">Simpan
-                                    Perubahan</button><button class="button button--secondary" id="resetSettings"
-                                    type="button">Reset Pengaturan</button></div>
+
+                            <div class="form-actions">
+                                <button class="button" type="submit">Simpan Perubahan</button>
+                                <button class="button button--secondary" id="resetSettings" type="button">
+                                    Reset Pengaturan
+                                </button>
+                            </div>
                             <p class="settings-status" id="profileStatus" role="status"></p>
                         </form>
                     </article>
-                    <article class="settings-card">
+
+                    <article class="settings-card" aria-labelledby="appearanceHeading">
                         <div class="card-title">
-                            <div class="setting-icon"><svg class="icon" viewBox="0 0 24 24">
+                            <div class="setting-icon" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="9" />
                                     <path d="M12 3a9 9 0 0 1 0 18M3 12h18" />
-                                </svg></div>
+                                </svg>
+                            </div>
                             <div>
-                                <h2 class="section-heading">Preferensi tampilan</h2>
+                                <h2 class="section-heading" id="appearanceHeading">Preferensi tampilan</h2>
                                 <p class="supporting-text">Atur tampilan dan bahasa yang kamu gunakan.</p>
                             </div>
                         </div>
-                        <div class="preference-grid"><label class="settings-field">Tema<select class="form-input"
-                                    id="themeSelect">
+
+                        <div class="preference-grid">
+                            <label class="settings-field">
+                                Tema
+                                <select class="form-input" id="themeSelect">
                                     <option value="light">Light</option>
                                     <option value="dark">Dark</option>
-                                </select></label><label class="settings-field">Bahasa<select class="form-input"
-                                    id="languageSelect">
+                                </select>
+                            </label>
+                            <label class="settings-field">
+                                Bahasa
+                                <select class="form-input" id="languageSelect">
                                     <option value="id">Bahasa Indonesia</option>
                                     <option value="en">English</option>
-                                </select></label></div>
+                                </select>
+                                <span class="field-hint">Pilihan English belum menerjemahkan seluruh antarmuka.</span>
+                            </label>
+                        </div>
                     </article>
-                    <article class="settings-card">
+
+                    <article class="settings-card" aria-labelledby="notificationHeading">
                         <div class="card-title">
-                            <div class="setting-icon"><svg class="icon" viewBox="0 0 24 24">
+                            <div class="setting-icon" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24">
                                     <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
-                                </svg></div>
+                                </svg>
+                            </div>
                             <div>
-                                <h2 class="section-heading">Pengaturan notifikasi</h2>
+                                <h2 class="section-heading" id="notificationHeading">Notifikasi</h2>
                                 <p class="supporting-text">Pilih informasi yang ingin kamu terima.</p>
                             </div>
                         </div>
-                        <div class="toggle-list"><label class="toggle-row"><span><strong>Notifikasi
-                                        email</strong><small>Terima pembaruan melalui email.</small></span><input
-                                    type="checkbox" data-setting="emailNotification" checked><i
-                                    class="toggle-ui"></i></label><label class="toggle-row"><span><strong>Notifikasi
-                                        study space</strong><small>Informasi ruang dan ketersediaan
-                                        terbaru.</small></span><input type="checkbox" data-setting="spaceNotification"
-                                    checked><i class="toggle-ui"></i></label><label
-                                class="toggle-row"><span><strong>Pengumuman kampus</strong><small>Berita dan informasi
-                                        penting kampus.</small></span><input type="checkbox"
-                                    data-setting="campusNotification"><i class="toggle-ui"></i></label></div>
+
+                        <div class="toggle-list">
+                            <label class="toggle-row">
+                                <span>
+                                    <strong>Notifikasi email</strong>
+                                    <small>Terima pembaruan melalui email.</small>
+                                </span>
+                                <input type="checkbox" data-setting="emailNotification" checked>
+                                <i class="toggle-ui" aria-hidden="true"></i>
+                            </label>
+                            <label class="toggle-row">
+                                <span>
+                                    <strong>Notifikasi study space</strong>
+                                    <small>Informasi ruang dan ketersediaan terbaru.</small>
+                                </span>
+                                <input type="checkbox" data-setting="spaceNotification" checked>
+                                <i class="toggle-ui" aria-hidden="true"></i>
+                            </label>
+                            <label class="toggle-row">
+                                <span>
+                                    <strong>Pengumuman kampus</strong>
+                                    <small>Berita dan informasi penting kampus.</small>
+                                </span>
+                                <input type="checkbox" data-setting="campusNotification">
+                                <i class="toggle-ui" aria-hidden="true"></i>
+                            </label>
+                        </div>
                     </article>
                 </section>
+
                 <aside class="settings-side">
-                    <article class="settings-card security-card">
+                    <article class="settings-card security-card" aria-labelledby="securityHeading">
                         <div class="card-title">
-                            <div class="setting-icon"><svg class="icon" viewBox="0 0 24 24">
+                            <div class="setting-icon" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24">
                                     <rect x="5" y="10" width="14" height="10" rx="2" />
                                     <path d="M8 10V7a4 4 0 0 1 8 0v3" />
-                                </svg></div>
+                                </svg>
+                            </div>
                             <div>
-                                <h2 class="section-heading">Keamanan akun</h2>
-                                <p class="supporting-text">Password hanya diproses dalam simulasi frontend.</p>
+                                <h2 class="section-heading" id="securityHeading">Keamanan akun</h2>
+                                <p class="supporting-text">Perubahan password masih berupa simulasi frontend.</p>
                             </div>
                         </div>
-                        <form id="passwordForm" novalidate><label class="settings-field">Password saat ini<div
-                                    class="password-field"><input class="form-input" id="currentPassword"
-                                        type="password"><button class="password-toggle" type="button"
-                                        data-target="currentPassword" aria-label="Tampilkan password"><svg class="icon"
-                                            viewBox="0 0 24 24">
+
+                        <form id="passwordForm" novalidate>
+                            <label class="settings-field">
+                                Password saat ini
+                                <span class="password-field">
+                                    <input class="form-input" id="currentPassword" type="password">
+                                    <button class="password-toggle" type="button" data-target="currentPassword"
+                                        aria-label="Tampilkan password">
+                                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                             <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
                                             <circle cx="12" cy="12" r="2.5" />
-                                        </svg></button></div><span class="field-error"
-                                    id="currentError"></span></label><label class="settings-field">Password baru<div
-                                    class="password-field"><input class="form-input" id="newPassword"
-                                        type="password"><button class="password-toggle" type="button"
-                                        data-target="newPassword" aria-label="Tampilkan password"><svg class="icon"
-                                            viewBox="0 0 24 24">
+                                        </svg>
+                                    </button>
+                                </span>
+                                <span class="field-error" id="currentError"></span>
+                            </label>
+                            <label class="settings-field">
+                                Password baru
+                                <span class="password-field">
+                                    <input class="form-input" id="newPassword" type="password">
+                                    <button class="password-toggle" type="button" data-target="newPassword"
+                                        aria-label="Tampilkan password">
+                                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                             <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
                                             <circle cx="12" cy="12" r="2.5" />
-                                        </svg></button></div><span class="field-error"
-                                    id="newError"></span></label><label class="settings-field">Konfirmasi password baru
-                                <div class="password-field"><input class="form-input" id="confirmPassword"
-                                        type="password"><button class="password-toggle" type="button"
-                                        data-target="confirmPassword" aria-label="Tampilkan password"><svg class="icon"
-                                            viewBox="0 0 24 24">
+                                        </svg>
+                                    </button>
+                                </span>
+                                <span class="field-error" id="newError"></span>
+                            </label>
+                            <label class="settings-field">
+                                Konfirmasi password baru
+                                <span class="password-field">
+                                    <input class="form-input" id="confirmPassword" type="password">
+                                    <button class="password-toggle" type="button" data-target="confirmPassword"
+                                        aria-label="Tampilkan password">
+                                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                                             <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z" />
                                             <circle cx="12" cy="12" r="2.5" />
-                                        </svg></button></div><span class="field-error"
-                                    id="confirmError"></span></label><button class="button" type="submit">Perbarui
-                                Password</button>
+                                        </svg>
+                                    </button>
+                                </span>
+                                <span class="field-error" id="confirmError"></span>
+                            </label>
+                            <button class="button" type="submit">Perbarui Password</button>
                             <p class="settings-status" id="passwordStatus" role="status"></p>
                         </form>
                     </article>
