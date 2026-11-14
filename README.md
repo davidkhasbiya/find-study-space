@@ -10,10 +10,10 @@ Mahasiswa dapat melihat informasi ruang, membandingkan fasilitas, mencari lokasi
 
 Proyek ini dikembangkan sebagai aplikasi frontend menggunakan HTML, CSS, JavaScript, dan Bootstrap. Data ruang belajar yang digunakan masih berupa data dummy dan belum terhubung dengan backend atau database.
 
-**Preview**
-=======
+## Preview
 <img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
-**Link Preview:**
+
+**Link Preview: https://find-study-space.vercel.app/**
 
 ## B. Main Features
 
