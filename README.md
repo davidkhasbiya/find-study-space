@@ -11,14 +11,9 @@ Mahasiswa dapat melihat informasi ruang, membandingkan fasilitas, mencari lokasi
 Proyek ini dikembangkan sebagai aplikasi frontend menggunakan HTML, CSS, JavaScript, dan Bootstrap. Data ruang belajar yang digunakan masih berupa data dummy dan belum terhubung dengan backend atau database.
 
 **Preview**
-<<<<<<< HEAD
 =======
 <img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
-
-## B. Features
->>>>>>> origin/main
-
-<img width="1368" height="802" alt="image" src="https://github.com/user-attachments/assets/714f14ec-39f8-435c-a04c-732d9fa71773" />
+**Link Preview:**
 
 ## B. Main Features
 
@@ -88,65 +83,65 @@ Proyek ini tidak memerlukan proses instalasi dependency menggunakan `npm install
 
 ```text
 find-study-space/
-â”œâ”€â”€ index.html
-â”œâ”€â”€ pages/
-â”‚   â”œâ”€â”€ login.html
-â”‚   â”œâ”€â”€ register.html
-â”‚   â”œâ”€â”€ dashboard.html
-â”‚   â”œâ”€â”€ search.html
-â”‚   â”œâ”€â”€ results.html
-â”‚   â”œâ”€â”€ detail.html
-â”‚   â”œâ”€â”€ location.html
-â”‚   â”œâ”€â”€ settings.html
-â”‚   â”œâ”€â”€ directions.html
-â”‚   â”œâ”€â”€ foundation.html
-â”‚   â””â”€â”€ components-preview.html
-â”œâ”€â”€ assets/
-â”‚   â”œâ”€â”€ css/
-â”‚   â”‚   â”œâ”€â”€ global.css
-â”‚   â”‚   â”œâ”€â”€ auth.css
-â”‚   â”‚   â”œâ”€â”€ dashboard.css
-â”‚   â”‚   â”œâ”€â”€ detail.css
-â”‚   â”‚   â”œâ”€â”€ landing.css
-â”‚   â”‚   â”œâ”€â”€ location.css
-â”‚   â”‚   â”œâ”€â”€ login.css
-â”‚   â”‚   â”œâ”€â”€ register.css
-â”‚   â”‚   â”œâ”€â”€ results.css
-â”‚   â”‚   â”œâ”€â”€ search.css
-â”‚   â”‚   â”œâ”€â”€ settings.css
-â”‚   â”‚   â””â”€â”€ components/
-â”‚   â”‚       â”œâ”€â”€ navbar.css
-â”‚   â”‚       â””â”€â”€ sidebar.css
-â”‚   â”œâ”€â”€ js/
-â”‚   â”‚   â”œâ”€â”€ theme.js
-â”‚   â”‚   â””â”€â”€ components/
-â”‚   â”‚       â”œâ”€â”€ navbar.js
-â”‚   â”‚       â””â”€â”€ sidebar.js
-â”‚   â””â”€â”€ images/
-â”œâ”€â”€ js/
-â”‚   â”œâ”€â”€ components.js
-â”‚   â”œâ”€â”€ data.js
-â”‚   â”œâ”€â”€ study-spaces.js
-â”‚   â”œâ”€â”€ landing.js
-â”‚   â”œâ”€â”€ login.js
-â”‚   â”œâ”€â”€ register.js
-â”‚   â”œâ”€â”€ dashboard.js
-â”‚   â”œâ”€â”€ search.js
-â”‚   â”œâ”€â”€ results.js
-â”‚   â”œâ”€â”€ detail.js
-â”‚   â”œâ”€â”€ location.js
-â”‚   â”œâ”€â”€ settings.js
-â”‚   â”œâ”€â”€ directions.js
-â”‚   â”œâ”€â”€ foundation-demo.js
-â”‚   â”œâ”€â”€ script.js
-â”‚   â””â”€â”€ sidebar.js
-â”œâ”€â”€ components/
-â”‚   â”œâ”€â”€ navbar.html
-â”‚   â””â”€â”€ sidebar.html
-â”œâ”€â”€ css/
-â”‚   â””â”€â”€ (Legacy stylesheets)
-â”œâ”€â”€ .gitignore
-â””â”€â”€ README.md
+├── index.html
+├── pages/
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── search.html
+│   ├── results.html
+│   ├── detail.html
+│   ├── location.html
+│   ├── settings.html
+│   ├── directions.html
+│   ├── foundation.html
+│   └── components-preview.html
+├── assets/
+│   ├── css/
+│   │   ├── global.css
+│   │   ├── auth.css
+│   │   ├── dashboard.css
+│   │   ├── detail.css
+│   │   ├── landing.css
+│   │   ├── location.css
+│   │   ├── login.css
+│   │   ├── register.css
+│   │   ├── results.css
+│   │   ├── search.css
+│   │   ├── settings.css
+│   │   └── components/
+│   │       ├── navbar.css
+│   │       └── sidebar.css
+│   ├── js/
+│   │   ├── theme.js
+│   │   └── components/
+│   │       ├── navbar.js
+│   │       └── sidebar.js
+│   └── images/
+├── js/
+│   ├── components.js
+│   ├── data.js
+│   ├── study-spaces.js
+│   ├── landing.js
+│   ├── login.js
+│   ├── register.js
+│   ├── dashboard.js
+│   ├── search.js
+│   ├── results.js
+│   ├── detail.js
+│   ├── location.js
+│   ├── settings.js
+│   ├── directions.js
+│   ├── foundation-demo.js
+│   ├── script.js
+│   └── sidebar.js
+├── components/
+│   ├── navbar.html
+│   └── sidebar.html
+├── css/
+│   └── (Legacy stylesheets)
+├── .gitignore
+└── README.md
 ```
 
 **Keterangan:**
