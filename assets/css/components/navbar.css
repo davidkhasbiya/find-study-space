@@ -75,6 +75,15 @@
         padding: 0 var(--space-5);
     }
 
+    .app-navbar.is-sidebar-open {
+        z-index: auto;
+    }
+
+    .app-navbar.is-sidebar-open .navbar__toggle {
+        position: relative;
+        z-index: 11;
+    }
+
     .navbar__toggle {
         display: inline-flex;
     }
