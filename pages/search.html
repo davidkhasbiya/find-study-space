@@ -19,7 +19,7 @@
         <div class="search-page-content">
             <section class="search-page-header">
                 <p class="eyebrow">EKSPLORE RUANG KAMPUS</p>
-                <h2>Cari Study Space</h2>
+                <h2>Temukan ruang yang sesuai</h2>
                 <p>Ruang yang tepat dimulai dari kebutuhanmu. Yuk, atur pencarianmu.</p>
             </section>
             <div class="search-layout row g-4 align-items-start">
@@ -30,13 +30,13 @@
                         <p class="supporting-text">Isi kriteria di bawah. Tidak semua kolom wajib diisi.</p>
                         <form class="row g-3" id="searchPageForm" novalidate>
                             <div class="col-12">
-                                <label class="search-field"><span>Nama ruang</span><input class="form-input"
-                                        id="spaceName" name="name" type="search"
+                                <label class="search-field"><span>Nama ruang</span><input
+                                        class="form-control form-input" id="spaceName" name="name" type="search"
                                         placeholder="Cari nama ruang, mis. Ruang Diskusi A"></label>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label class="search-field"><span>Lokasi gedung</span><select class="form-input"
-                                        id="building" name="location">
+                                <label class="search-field"><span>Lokasi gedung</span><select
+                                        class="form-select form-input" id="building" name="location">
                                         <option value="">Semua gedung</option>
                                         <option value="Gedung Teknik">Gedung Teknik</option>
                                         <option value="Perpustakaan">Perpustakaan Pusat</option>
@@ -44,8 +44,8 @@
                                     </select></label>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label class="search-field"><span>Kapasitas ruang</span><select class="form-input"
-                                        id="capacity" name="capacity">
+                                <label class="search-field"><span>Kapasitas ruang</span><select
+                                        class="form-select form-input" id="capacity" name="capacity">
                                         <option value="">Semua kapasitas</option>
                                         <option value="1">1–4 orang</option>
                                         <option value="5">5–10 orang</option>
@@ -66,11 +66,11 @@
                             </fieldset>
                             <p class="search-error col-12" id="searchError" role="alert"></p>
                             <div class="search-actions col-12">
-                                <button class="button" type="submit"><svg class="icon" viewBox="0 0 24 24">
+                                <button class="button btn" type="submit"><svg class="icon" viewBox="0 0 24 24">
                                         <circle cx="11" cy="11" r="6" />
                                         <path d="m16 16 4 4" />
                                     </svg>Cari Ruang</button>
-                                <button class="button button--secondary" id="resetButton" type="button">Reset
+                                <button class="button button--secondary btn" id="resetButton" type="button">Reset
                                     Filter</button>
                             </div>
                         </form>
